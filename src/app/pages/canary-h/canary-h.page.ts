@@ -16,7 +16,7 @@ export class CanaryHPage implements OnInit {
       cssClass: 'slide-1',
       link: '/triana'
     }, {
-      titulo: 'Playa Patalavaca',
+      titulo: 'Vegueta',
       cssId: 'slideCard',
       cssClass: 'slide-2',
       link: '/triana'
