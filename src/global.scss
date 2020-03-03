@@ -24,3 +24,40 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+    font-family: 'Quicksand-light';
+    src: url("assets/fonts/quicksand/Quicksand-Light.ttf");
+  }
+  @font-face {
+    font-family: 'Quicksand-medium';
+    src: url("assets/fonts/quicksand/Quicksand-Medium.ttf");
+  }
+  @font-face {
+    font-family: 'Quicksand-regular';
+    src: url("assets/fonts/quicksand/Quicksand-Regular.ttf");
+  }
+  @font-face {
+    font-family: 'Quicksand-semiBold';
+    src: url("assets/fonts/quicksand/Quicksand-SemiBold.ttf");
+  }
+  @font-face {
+    font-family: 'wayfang';
+    src: url("assets/fonts/wayfang/wayfaring_font_two-webfont.woff2");
+  }
+  @font-face {
+    font-family: 'tradesupply';
+    src: url("assets/fonts/tradesupply/tradesupply-textured-webfont.woff2");
+  }
+  @font-face {
+    font-family: 'whoopass';
+    src: url("assets/fonts/whoopass/whoopass.ttf");
+  }
+  @font-face {
+    font-family: 'neueM';
+    src: url("assets/fonts/neue/neueM.ttf");
+  }
+
+  .swiper-pagination {
+    bottom: 52.5% !important;
+ }

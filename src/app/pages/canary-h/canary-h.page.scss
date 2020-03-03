@@ -1,0 +1,210 @@
+ion-content{
+    --background: #ffffff;
+}
+
+#container {
+    text-align: center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.15) 65%, rgba(198,198,198,0.13) 85%, rgba(128,128,128,0.1) 100%);
+}
+
+#header{
+    width: 100%;
+    height: 45%;
+    background: url(../../../assets/img/birds.jpg);
+    background-size: cover;
+    background-position: 0 -40px;
+}
+#header h6{
+    font-family: 'Quicksand-light';
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: 8%;
+    width: 100%;
+    text-shadow: 0px 3px 4px #000000;
+    z-index: 10;
+    animation-delay: 1s;
+}
+#header h1{
+    font-family: 'neueM';
+    color: white;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10.5%;
+    width: 100%;
+    text-shadow: 0px 3px 4px #000000;
+    z-index: 10;
+    animation-delay: 1s;
+}
+
+.hr{
+    height: 1px;
+    width: 60%;
+    background: white;
+    position: absolute;
+    top: 17.5%;
+    left: 20%;
+    transform: rotate(135deg);
+    z-index: 9;
+    animation-delay: 1s;
+}
+
+svg{
+    margin-top: -5%;
+    transform: rotate(0deg);
+    margin-left: -700px;
+}
+
+ion-button{
+    height: 35px;
+    width: 50%;
+    margin-top: 55%;
+    opacity: .82;
+    --background: #F1C723;
+    --border-radius: 0px;
+    --background-hover: #F1C723;
+    z-index: 10;
+    animation-delay: 1.2s;
+}
+
+ion-button h5{
+    font-size: 16px;
+    margin-top: 9px;
+    text-shadow: 0px 3px 4px #616161;
+}
+
+.bar{
+    width: 2.5px;
+    height: 12.5px;
+    position: absolute;
+    background: #F9D54A;
+    left: 20px;
+    top: 47%;
+}
+.bartxt{
+    position: absolute;
+    margin-top: -15.5%;
+    width: auto;
+    font-size: 16px;
+    font-family: 'Quicksand-regular';
+    color: #0768A9;
+    left: 25px;
+    top: 55%;
+}
+
+.slide-full{
+    height: 49% !important;
+    margin-top: 0%;
+    --bullet-background: #0768A9;
+    --bullet-background-active: #F9D54A;
+}
+
+ion-card{
+    overflow: unset !important;
+    height: 200px;
+    width: 192px;
+}
+
+ion-card-header{
+    position: relative;
+}
+
+ion-card-title{
+    color: #fff;
+    font-size: 14px;
+    font-family: 'neueM';
+    text-transform: uppercase;
+    position: absolute;
+    left: 5%;
+    top: 135px;
+}
+
+.slide-full .slide ion-card{
+    border-radius: 15px;
+    background-size: cover;
+    margin-top: 7.5%;
+    user-select: none; 
+    box-shadow: 0px 3px 10px 0px rgba(0,0,0,1);
+}
+
+
+.slide-full .slide:nth-child(1) ion-card{
+    --background: url(../../../assets/img/slides/aerial-photography-of-cinque-terre-in-greece-2422259.jpg);
+}
+
+.slide-full .slide:nth-child(2) ion-card{
+    --background: url(../../../assets/img/slides/aerial-photography-of-seashore-1404918.jpg);
+}
+
+.slide-full .slide:nth-child(3) ion-card{
+    --background: url(../../../assets/img/slides/cave-near-sea-1853373.jpg);
+}
+
+.slide-full .slide:nth-child(4) ion-card{
+    --background: url(../../../assets/img/slides/mountain-range-under-beige-sky-1670187.jpg);
+}
+
+#cardOp{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.49) 72%, rgba(0,0,0,1) 90%, rgba(0,0,0,1) 100%);
+    border-radius: 15px;
+    margin-top: -15%;
+}
+
+#card{
+    position: absolute;
+    width: 100%;
+}
+#card ion-icon{
+    width: 10%;
+    height: 11px;
+    position: absolute;
+    top: 122px;
+    font-size: 11px;
+}
+
+#icon1{
+    color: #fff;
+    left: 5%;
+}
+#icon2{
+    color: #0768A9;
+    left: 10%;
+}
+#icon3{
+    color: #F9D54A;
+    left: 15%;
+}
+#icon4{
+    color: #fff;
+    left: 20%;
+}
+#icon5{
+    color: #0768A9;
+    left: 25%;
+}
+#icon6{
+    color: #F9D54A;
+    left: 30%;
+}
+
+#card p{
+    position: absolute;
+    top: 118px;
+    left: 40%;
+    font-weight: bold;
+    font-size: 13px;
+    opacity: .47;
+    color: #fff;
+    font-family: 'Quicksand-light';
+    text-shadow: 0px 3px 4px #000000;
+}
