@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'triana',
     loadChildren: () => import('./pages/triana/triana.module').then( m => m.TrianaPageModule)
   },
+  {
+    path: 'game',
+    loadChildren: () => import('./pages/game/game.module').then( m => m.GamePageModule)
+  }
 ];
 
 @NgModule({
