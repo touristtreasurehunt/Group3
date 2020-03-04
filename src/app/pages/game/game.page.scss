@@ -121,7 +121,7 @@
 #curtain .redondo{
     width: 118vw;
     height: 105vw;
-    background: #0768A9;
+    background: #F1C723;
     z-index: 5;
     border-radius: 50%;
     visibility: hidden;
@@ -138,7 +138,7 @@
 #curtain .redondo2{
     width: 118vw;
     height: 118vw;
-    background: #F1C723;
+    background: #0768A9;
     border: 1px solid #F1C723;
     z-index: 4;
     border-radius: 50%;
@@ -166,7 +166,7 @@
 }
 
 #curtain.active #svg{
-    visibility: hidden;
+    visibility: visible;
     transition-delay: 2s;
 }
 
@@ -175,7 +175,19 @@
 }
 
 #curtain.active #svg2{
-    visibility: hidden;
+    visibility: visible;
     transition-delay: 2s;
 }
 
+#curtain .buttonOption{
+  z-index: 4;
+  width: 60%;
+  position: absolute;
+  --background: #fff;
+  --border-color: #F1C723;
+  --background-hover: #fff;
+  --background-activated: #fff;
+  --border-style: solid;
+  --border-width: 1px;
+  --border-radius: 300px;
+}
