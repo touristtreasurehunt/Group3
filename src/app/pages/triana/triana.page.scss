@@ -163,14 +163,14 @@ svg{
     left: 0%;
 }
 
-#buttonGame{
+ion-button{
     width: 50%;
     height: 5%;
     position: absolute;
     top: 92%;
     left: 25%;
+    z-index: 3;
     --background: #F1C723;
-    --background-size: cover;
     --background-hover: #F1C723;
     --border-color: #0768A9;
     --border-width: 1px;
