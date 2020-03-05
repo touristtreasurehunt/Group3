@@ -23,8 +23,10 @@ export class GamePage implements OnInit {
     setTimeout(function() {
       const redondo2 = $('.redondo2');
       const redondo = $('.redondo');
+      const bg = $('#bg');
       redondo2.addClass('bounceIn');
       redondo.addClass('bounceIn');
+      bg.addClass('bounceIn')
     }, 1500);
   }
 

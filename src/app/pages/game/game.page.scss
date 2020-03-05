@@ -130,6 +130,35 @@
     box-shadow: 0px 0px 8px 0px #000;
 }
 
+ion-icon[name=checkmark]{
+  height: 7%;
+  width: 7%;
+  color: #F1C723;
+  position: absolute;
+  top: 70%;
+  left: 11%;
+}
+
+ion-icon[name=close]{
+  height: 7%;
+  width: 7%;
+  color: #F1C723;
+  position: absolute;
+  top: 70%;
+  left: 83%;
+}
+
+#question{
+  height: 15%;
+  width: 50%;
+  position: absolute;
+  top: 80%;
+  left: 25%;
+  text-align: center;
+  color: #fff;
+  font-family: 'Quicksand-light';
+}
+
 #curtain.active .redondo{
     visibility: visible;
     transition-delay: 1.5s;
@@ -146,6 +175,33 @@
     position: absolute;
     top: -33%;
     box-shadow: 0px 0px 15px 0px #c6c6c6;
+}
+
+ion-icon[name=home]{
+  height: 7%;
+  width: 7%;
+  color: #0768A9;
+  position: absolute;
+  top: 75%;
+  left: 14%;
+  z-index: 5;
+}
+
+.redondo h1{
+  font-size: 30px;
+  font-size: 'Quicksand-regular';
+  text-transform: uppercase;
+  position: absolute;
+  top: 75%;
+  left: 33.5%;
+  color: #0768A9;
+}
+
+.redondo p{
+  color: #0768A9;
+  position: absolute;
+  top: 71%;
+  left: 75%;
 }
 
 #curtain.active .redondo2{
@@ -190,4 +246,46 @@
   --border-style: solid;
   --border-width: 1px;
   --border-radius: 300px;
+  border-radius: 300px;
+  visibility: hidden;
+  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+}
+
+#curtain.active .buttonOption{
+  visibility: visible;
+  transition-duration: 3s;
+}
+
+#option1{
+  top: 35%;
+  transition-delay: 2.2s;
+}
+
+#option2{
+  top: 45%;
+  transition-delay: 2.4s;
+}
+
+#option3{
+  top: 55%;
+  transition-delay: 2.6s;
+}
+
+#option4{
+  top: 65%;
+  transition-delay: 2.8s;
+}
+
+#bg{
+  width: 100%;
+  height: 100%;
+  background: url(../../../assets/img/Grupo.png);
+  background-size: cover;
+  z-index: 4;
+  visibility: hidden;
+}
+
+#curtain.active #bg{
+  visibility: visible;
+  transition-delay: 1.5s;
 }
