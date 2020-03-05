@@ -9,26 +9,22 @@ import { faDeaf } from '@fortawesome/free-solid-svg-icons';
 })
 export class CanaryHPage implements OnInit {
 
-  slides: {titulo: string, cssId: string, cssClass: string, link: string}[] =[
+  slides: {titulo: string, cssId: string, link: string}[] =[
     {
       titulo: 'Triana',
       cssId: 'slideCard',
-      cssClass: 'slide-1',
       link: '/triana'
     }, {
       titulo: 'Vegueta',
       cssId: 'slideCard',
-      cssClass: 'slide-2',
       link: '/triana'
     }, {
       titulo: 'Alberta',
       cssId: 'slideCard',
-      cssClass: 'slide-3',
       link: '/triana'
     }, {
       titulo: 'Roque Nublo',
       cssId: 'slideCard',
-      cssClass: 'slide-4',
       link: '/triana'
     }
   ];
