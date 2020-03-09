@@ -314,7 +314,7 @@ ion-icon[name=home]{
   transform: rotate(-30deg);
   position: relative;
   top: -5px;
-  left: 250px;
+  left: 77%;
   border-radius: 0 15px 15px 0;
   border-radius: 8px;
 }
@@ -448,7 +448,7 @@ ion-icon[name=home]{
 
 .wing-l{
   bottom: 0px;
-  left: -26%;
+  left: -29%;
   border-radius: 50px 0;
   transform-origin: 30px 10px;
   transform: rotate(-40deg);
@@ -465,8 +465,8 @@ ion-icon[name=home]{
 }
 
 .wing-r{
-  bottom: 75px;
-  left: 86%;
+  bottom: 40%;
+  left: 85%;
   border-radius: 0 50px;
   transform-origin: 30px 10px;
   transform: rotate(40deg);
@@ -488,20 +488,20 @@ ion-icon[name=home]{
   background-color: #F9D54A;
   border-radius: 50%;
   position: relative;
-  bottom: 125%;
+  bottom: 127%;
   left: 10%;
   overflow: hidden;
 }
 
 .eye-l:before{
   content: '';
-  height: 32px;
-  width: 32px;
+  height: 5vh;
+  width: 5vh;
   background-color: #ffffff;
   border-radius: 50%;
   position: absolute;
-  left: 4.5px;
-  top: 4.5px;
+  left: 7%;
+  top: 8%;
 }
 
 .eye-r{
@@ -510,20 +510,20 @@ ion-icon[name=home]{
   background-color: #F9D54A;
   border-radius: 50%;
   position: relative;
-  bottom: 151.5%;
+  bottom: 153%;
   left: 55%;
   overflow: hidden;
 }
 
 .eye-r:before{
   content: '';
-  height: 32px;
-  width: 32px;
+  height: 5vh;
+  width: 5vh;
   background-color: #ffffff;
   border-radius: 50%;
   position: absolute;
-  left: 4.5px;
-  top: 4.5px;
+  left: 7%;
+  top: 8%;
 }
 
 .eyeball{
@@ -552,7 +552,7 @@ ion-icon[name=home]{
   background-color: #F9D54A;
   position: relative;
   right: -3%;
-  bottom: 120%;
+  bottom: 148%;
   animation: blink 6s infinite;
 }
 
@@ -626,8 +626,8 @@ ion-icon[name=home]{
   border-top: 20px solid #fc7753;
   border-radius: 50%;
   position: relative;
-  bottom: 150%;
-  left: 47.5px;
+  bottom: 152%;
+  left: 38%;
 }
 
 .leg-r, .leg-l{
@@ -640,18 +640,17 @@ ion-icon[name=home]{
 }
 
 .leg-l{
-  bottom: 125%;
+  bottom: 126%;
   left: 25%;
   z-index: 900;
 }
 .leg-r{
-  bottom: 131.25%;
-  left: 60%;
+  bottom: 133.25%;
+  left: 57%;
   z-index: 900;
 }
 
 .contenedorZ{
-  /* border: 3px solid #fff; */
   width: 200px;
   height: 125px;
   top: 30px;
