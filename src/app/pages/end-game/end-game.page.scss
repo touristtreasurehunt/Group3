@@ -115,6 +115,7 @@ ion-content{
     top: 20%;
     box-shadow: 0px 0px 10px #b6b6b6;
     text-align: center;
+    z-index: 999;
 }
 
 #card h1{
@@ -165,7 +166,8 @@ ion-button h5{
     left: 0;
     z-index: 930;
     visibility: visible;
-    // border: 3px solid #fff; 
+    // border: 3px solid #fff;
+    z-index: 900;
   }
   
   #curtain.active .container{
