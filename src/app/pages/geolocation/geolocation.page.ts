@@ -29,11 +29,7 @@ export class GeolocationPage implements OnInit {
   ngOnInit() {}
 
   amIClose() {
-    // let lat1 = 28.1235459;
-    // let lon1 = -15.4362574;
-    // let lat2 = 28.1281521;
-    // let lon2 = -15.4489039;
-
+    let displayContent = document.querySelector("#display_content");
     let lat1 = this.myLocation[0].Lat;
     let lon1 = this.myLocation[0].Lon;
     let lat2 = this.markerLocation[0].Lat;
@@ -47,28 +43,34 @@ export class GeolocationPage implements OnInit {
       (c(+lat1 * p) * c(+lat2 * p) * (1 - c((+lon2 - +lon1) * p))) / 2;
     let dinstance = 12742 * Math.asin(Math.sqrt(a));
     let dinstanceToString = dinstance.toString();
+    let dinstanceFinal = Number(dinstanceToString.slice(0, 5));
 
-    console.log(Number(dinstanceToString.slice(0, 5)));
+    console.log(dinstanceFinal);
+
+    if (dinstanceFinal < 0.05) {
+      displayContent.innerHTML = dinstanceFinal + "Km you are close";
+    } else {
+      displayContent.innerHTML =
+        dinstanceFinal + "Km you are not close at all!";
+    }
   }
 
   locatePosition() {
-    this.map.locate({ setView: false }).on("locationfound", (e: any) => {
-      let newMarker = marker([e.latitude, e.longitude], {
-        draggable: false
-      }).addTo(this.map);
-      newMarker.bindPopup("You are located here!").openPopup();
-      this.myLocation[0].Lat = e.latitude;
-      this.myLocation[0].Lon = e.longitude;
-    });
+    this.map
+      .locate({ setView: false, watch: true })
+      .on("locationfound", (e: any) => {
+        let newMarker = marker([e.latitude, e.longitude], {
+          draggable: false
+        }).addTo(this.map);
+        newMarker.bindPopup("You are located here!").openPopup();
+        this.myLocation[0].Lat = e.latitude;
+        this.myLocation[0].Lon = e.longitude;
+      });
   }
 
-  private autoSaveInterval: number = setInterval(() => {
-    this.locatePosition();
-  }, 5000);
-
   ionViewDidEnter() {
-    let Lat = 28.1281521;
-    let Lon = -15.4489039;
+    let Lat = 28.1235459;
+    let Lon = -15.4357534;
     this.markerLocation[0].Lat = Lat;
     this.markerLocation[0].Lon = Lon;
     this.map = L.map("mapLeaflet", {
