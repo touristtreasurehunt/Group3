@@ -9,6 +9,7 @@ import { ConnectionService } from "../../services/connection.service";
 })
 export class CanaryHPage implements OnInit {
 
+
   places: PlacesI[];
 
   slides: {titulo: string, link: string}[] =[
@@ -23,6 +24,7 @@ export class CanaryHPage implements OnInit {
       link: '/triana'
     }, {
       titulo: 'Roque Nublo',
+
       link: '/triana'
     }
   ];
