@@ -15,7 +15,7 @@ export class CanaryHPage implements OnInit {
   slides: {titulo: string, link: string}[] =[
     {
       titulo: 'Triana',
-      link: '/triana'
+      link: '/monumentlist'
     }, {
       titulo: 'Vegueta',
       link: '/triana'
