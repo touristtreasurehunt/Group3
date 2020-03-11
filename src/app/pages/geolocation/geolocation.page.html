@@ -5,6 +5,16 @@
     </ion-toolbar>
   </ion-header>
   <div id="mapLeaflet"></div>
-  <ion-button expand="block" shape="round" (click)="locatePosition()">Get My location</ion-button>
-  <ion-button expand="block" shape="round" (click)="amIClose()">Am i close ?</ion-button>
+  <ion-button expand="block" shape="round" (click)="locatePosition()"
+    >Get My location</ion-button
+  >
+  <ion-button expand="block" shape="round" (click)="ionMarker()"
+    >Get Marker</ion-button
+  >
+  <ion-button expand="block" shape="round" (click)="ionMakeRoute()"
+    >Make Route</ion-button
+  >
+  <ion-button expand="block" shape="round" (click)="amIClose()"
+    >Am i close ?</ion-button
+  >
 </ion-content>

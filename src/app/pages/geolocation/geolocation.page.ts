@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import * as L from "leaflet";
 import { Map, tileLayer, marker, LatLng } from "leaflet";
+import "leaflet-routing-machine";
 
 @Component({
   selector: "app-geolocation",
@@ -77,7 +78,14 @@ export class GeolocationPage implements OnInit {
       });
   }
 
-  ionGameMarker() {}
+  ionMarker() {
+    let Lat = Number(this.markerLocation[0].Lat);
+    let Lon = Number(this.markerLocation[0].Lon);
+
+    L.marker([Lat, Lon], { draggable: false })
+      .addTo(this.map)
+      .bindPopup("This is a location you need to find");
+  }
 
   // This controls the starting View for the geolocation
   ionViewDidEnter() {
@@ -92,8 +100,17 @@ export class GeolocationPage implements OnInit {
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(
       this.map
     );
-    L.marker([Lat, Lon], { draggable: false })
-      .addTo(this.map)
-      .bindPopup("This is a location you need to find");
+  }
+
+  ionMakeRoute() {
+    let Lat1 = Number(this.myLocation[0].Lat);
+    let Lon1 = Number(this.myLocation[0].Lon);
+    let Lat2 = Number(this.markerLocation[0].Lat);
+    let Lon2 = Number(this.markerLocation[0].Lon);
+
+    L.Routing.control({
+      waypoints: [L.latLng(Lat1, Lon1), L.latLng(Lat2, Lon2)],
+      routeWhileDragging: true
+    }).addTo(this.map);
   }
 }
