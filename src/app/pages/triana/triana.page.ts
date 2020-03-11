@@ -52,4 +52,14 @@ export class TrianaPage implements OnInit {
     // console.log('asdasdsadsadsadsadsadasdsa');
     ionBody.addClass('prueba');
   }
+
+  closePopUp() {
+    const ionBody = $('#ionBody');
+    const overlay = $('#overlay');
+    const popup = $('#popup');
+    overlay.removeClass('active');
+    popup.removeClass('active');
+    ionBody.removeClass('prueba');
+    console.log('dasdasda');
+  }
 }
