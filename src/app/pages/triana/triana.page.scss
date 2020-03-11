@@ -79,10 +79,26 @@ ion-content{
 }
 
 #buttonCloseMap{
-    width: 5%;
-    height: 5%;
-    
+    position: absolute;
+    top: 5%;
+    left: 80%;
+    width: 12vw;
+    height: 12vw;
+    opacity: .82;
+    --background: none;
+    --border-radius: 50%;
+    --border-color: #0768A9;
+    --border-width: 1px;
+    --border-style: solid;
 }
+ion-icon[name=close]{
+    height: 10%;
+    width: 10%;
+    color: #0768A9;
+    position: absolute;
+    top: 1.5%;
+    left: 84%;
+  }
 
 /* ------------------------- */
 /* ANIMACIONES */
