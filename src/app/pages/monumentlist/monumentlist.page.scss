@@ -2,138 +2,140 @@ ion-content{
     --background: #ffffff;
 }
 
-#container {
-    text-align: center;
-    background-size: cover;
-    position: absolute;
-    left: 0;
-    right: 0;
+#contenedor{
     height: 100%;
     width: 100%;
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.15) 65%, rgba(198,198,198,0.13) 85%, rgba(128,128,128,0.1) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 42%, rgba(253,253,253,1) 65%, rgba(203,203,203,1) 100%);
 }
 
-#header{
-    width: 100%;
-    height: 50%;
-    background: url(../../../assets/img/Triana2.jpg);
-    background-size: cover;
-    background-position: -110px 0;
-}
-
-#header h6{
-    font-family: 'Quicksand-light';
-    color: #ffffff;
-    font-size: 100%;
-    position: absolute;
-    top: 10%;
-    width: 100%;
-    text-shadow: 0px 3px 4px #000000;
-    z-index: 10;
-    animation-delay: 1s;
-}
-
-#header h1{
-    font-family: 'neueM';
-    color: #ffffff;
-    text-transform: uppercase;
-    font-size: 380%;
-    font-weight: bold;
-    position: absolute;
-    top: 12.5%;
-    width: 100%;
-    text-shadow: 0px 3px 10px #000000;
-    z-index: 10;
-    animation-delay: 1s;
-}
-
-svg{
-    margin-top: -5%;
-    transform: rotate(0deg);
-    margin-left: -10%;
-}
-
-ion-button{
-    height: 12%;
-    width: 40%;
-    margin-top: 65%;
-    opacity: .82;
-    --background: #F1C723;
-    --background-hover: #F1C723;
-    z-index: 10;
-    animation-delay: 1.2s;
-}
-
-ion-button h5{
-    font-size: 100%;
-    margin-top: 9%;
-    text-shadow: 0px 3px 10px #616161;
-}
-
-#list{
-    height: auto;
-    width: 100%;
-    background: red;
-}
-
-#list div{
-    height: 15%;
-    width: 105%;
-    left: 0;
-    position: absolute;
-}
-
-#list div h1{
+#contenedor > div {
+    height: 10%;
+    width: 90%;
     position: absolute;
     left: 5%;
-    padding-top: 3%;
-    font-size: 24px;
+    background: white;
+    box-shadow: 0px 0px 10px #b1b1b1;
+}
+
+
+#list{
+    top: 5%;
+}
+
+#list #img1{
+    height: 6vh;
+    width: 6vh;
+    position: absolute;
+    border-radius: 50%;
+    top: 18%;
+    left: 4%;
+}
+
+#list #img2{
+    height: 35%;
+    width: 35%;
+    position: absolute;
+    border-radius: 50%;
+    top: 47.5%;
+    left: 22%;
+}
+
+#list h1{
+    width: 100%;
+    position: absolute;
+    top: -10%;
+    left: 20%;
+    font-size: 18px;
     font-family: 'Quicksand-regular';
-    text-shadow: 0px 0px 10px #000;
 }
 
-#list1{
-    background: url(../../../assets/img/list.png);
-    background-size: cover;
-    top: 53%;
+#list ion-icon{
     color: #0768A9;
-    text-shadow: 0px 0px 10px #b1b1b1;
-}
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    top: 32.5%;
+    left: 77%;
+  }
 
-#list1 ion-icon{
-    color: #0768A9;
-    width: 25%;
-    height: 25%;
-    margin-top: 9%;
-    margin-left: 73%;
-}
 
 #list2{
-    background: url(../../../assets/img/list2.png);
-    background-size: cover;
-    top: 67.5%;
-    color: #F1C723;
+    top: 20%;
+}
+
+#list2 #img1{
+    height: 6vh;
+    width: 6vh;
+    position: absolute;
+    border-radius: 50%;
+    top: 18%;
+    left: 4%;
+}
+
+#list2 #img2{
+    height: 35%;
+    width: 35%;
+    position: absolute;
+    border-radius: 50%;
+    top: 47.5%;
+    left: 22%;
+}
+
+#list2 h1{
+    width: 100%;
+    position: absolute;
+    top: -10%;
+    left: 20%;
+    font-size: 18px;
+    font-family: 'Quicksand-regular';
 }
 
 #list2 ion-icon{
-    color: #F1C723;
-    width: 25%;
-    height: 25%;
-    margin-top: 9%;
-    margin-left: 73%;
-}
+    color: #0768A9;
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    top: 32.5%;
+    left: 77%;
+  }
+
 
 #list3{
-    background: url(../../../assets/img/list3.png);
-    background-size: cover;
-    top: 82%;
-    color: white;
+    top: 35%;
+}
+
+#list3 #img1{
+    height: 6vh;
+    width: 6vh;
+    position: absolute;
+    border-radius: 50%;
+    top: 18%;
+    left: 4%;
+}
+
+#list3 #img2{
+    height: 35%;
+    width: 35%;
+    position: absolute;
+    border-radius: 50%;
+    top: 47.5%;
+    left: 22%;
+}
+
+#list3 h1{
+    width: 100%;
+    position: absolute;
+    top: -10%;
+    left: 20%;
+    font-size: 18px;
+    font-family: 'Quicksand-regular';
 }
 
 #list3 ion-icon{
-    color: #fff;
-    width: 25%;
-    height: 25%;
-    margin-top: 9%;
-    margin-left: 73%;
-}
+    color: #0768A9;
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    top: 32.5%;
+    left: 77%;
+  }
