@@ -20,6 +20,11 @@ const routes: Routes = [
     path: 'end-game',
     loadChildren: () => import('./pages/end-game/end-game.module').then( m => m.EndGamePageModule)
   },
+  {
+    path: 'monumentlist',
+    loadChildren: () => import('./pages/monumentlist/monumentlist.module').then( m => m.MonumentlistPageModule)
+  },
+
 ];
 
 @NgModule({
