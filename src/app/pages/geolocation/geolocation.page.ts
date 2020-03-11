@@ -10,6 +10,7 @@ import { Map, tileLayer, marker, LatLng } from "leaflet";
 export class GeolocationPage implements OnInit {
   map: any;
   start: any;
+  newMarker: any;
 
   myLocation: { Lat: Number; Lon: Number }[] = [
     {
@@ -19,14 +20,17 @@ export class GeolocationPage implements OnInit {
   ];
   markerLocation: { Lat: Number; Lon: Number }[] = [
     {
-      Lat: 0,
-      Lon: 0
+      Lat: 28.1300459,
+      Lon: -15.4477534
     }
   ];
 
   constructor() {}
 
   ngOnInit() {}
+
+  // Tells you the dinstance from your point to the marker
+  // This is bullshit and we don't need it anymore
 
   amIClose() {
     let displayContent = document.querySelector("#display_content");
@@ -55,24 +59,30 @@ export class GeolocationPage implements OnInit {
     }
   }
 
+  // Tracks your location
   locatePosition() {
     this.map
-      .locate({ setView: false, watch: true })
+      .locate({ setView: false, watch: true, maximumAge: 5 })
       .on("locationfound", (e: any) => {
-        let newMarker = marker([e.latitude, e.longitude], {
-          draggable: false
-        }).addTo(this.map);
-        newMarker.bindPopup("You are located here!").openPopup();
+        if (this.newMarker != undefined) {
+          this.newMarker.setLatLng(e.latlng);
+        } else {
+          this.newMarker = marker([e.latitude, e.longitude], {
+            draggable: false
+          }).addTo(this.map);
+        }
+
         this.myLocation[0].Lat = e.latitude;
         this.myLocation[0].Lon = e.longitude;
       });
   }
 
+  ionGameMarker() {}
+
+  // This controls the starting View for the geolocation
   ionViewDidEnter() {
-    let Lat = 28.1235459;
-    let Lon = -15.4357534;
-    this.markerLocation[0].Lat = Lat;
-    this.markerLocation[0].Lon = Lon;
+    let Lat = Number(this.markerLocation[0].Lat);
+    let Lon = Number(this.markerLocation[0].Lon);
     this.map = L.map("mapLeaflet", {
       center: [Lat, Lon],
       zoom: 15,
