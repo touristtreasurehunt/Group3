@@ -33,32 +33,32 @@ export class GeolocationPage implements OnInit {
   // Tells you the dinstance from your point to the marker
   // This is bullshit and we don't need it anymore
 
-  amIClose() {
-    let displayContent = document.querySelector("#display_content");
-    let lat1 = this.myLocation[0].Lat;
-    let lon1 = this.myLocation[0].Lon;
-    let lat2 = this.markerLocation[0].Lat;
-    let lon2 = this.markerLocation[0].Lon;
+  // amIClose() {
+  //   let displayContent = document.querySelector("#display_content");
+  //   let lat1 = this.myLocation[0].Lat;
+  //   let lon1 = this.myLocation[0].Lon;
+  //   let lat2 = this.markerLocation[0].Lat;
+  //   let lon2 = this.markerLocation[0].Lon;
 
-    var p = 0.017453292519943295; // Math.PI / 180
-    var c = Math.cos;
-    var a =
-      0.5 -
-      c((+lat2 - +lat1) * p) / 2 +
-      (c(+lat1 * p) * c(+lat2 * p) * (1 - c((+lon2 - +lon1) * p))) / 2;
-    let dinstance = 12742 * Math.asin(Math.sqrt(a));
-    let dinstanceToString = dinstance.toString();
-    let dinstanceFinal = Number(dinstanceToString.slice(0, 5));
+  //   var p = 0.017453292519943295; // Math.PI / 180
+  //   var c = Math.cos;
+  //   var a =
+  //     0.5 -
+  //     c((+lat2 - +lat1) * p) / 2 +
+  //     (c(+lat1 * p) * c(+lat2 * p) * (1 - c((+lon2 - +lon1) * p))) / 2;
+  //   let dinstance = 12742 * Math.asin(Math.sqrt(a));
+  //   let dinstanceToString = dinstance.toString();
+  //   let dinstanceFinal = Number(dinstanceToString.slice(0, 5));
 
-    console.log(dinstanceFinal);
+  //   console.log(dinstanceFinal);
 
-    if (dinstanceFinal < 0.05) {
-      displayContent.innerHTML = dinstanceFinal + "Km you are close";
-    } else {
-      displayContent.innerHTML =
-        dinstanceFinal + "Km you are not close at all!";
-    }
-  }
+  //   if (dinstanceFinal < 0.05) {
+  //     displayContent.innerHTML = dinstanceFinal + "Km you are close";
+  //   } else {
+  //     displayContent.innerHTML =
+  //       dinstanceFinal + "Km you are not close at all!";
+  //   }
+  // }
 
   // Tracks your location
   locatePosition() {
@@ -78,21 +78,15 @@ export class GeolocationPage implements OnInit {
       });
   }
 
-  ionMarker() {
-    let Lat = Number(this.markerLocation[0].Lat);
-    let Lon = Number(this.markerLocation[0].Lon);
-
-    L.marker([Lat, Lon], { draggable: false })
-      .addTo(this.map)
-      .bindPopup("This is a location you need to find");
-  }
-
   // This controls the starting View for the geolocation
   ionViewDidEnter() {
-    let Lat = Number(this.markerLocation[0].Lat);
-    let Lon = Number(this.markerLocation[0].Lon);
+    let Lat1 = Number(this.myLocation[0].Lat);
+    let Lon1 = Number(this.myLocation[0].Lon);
+    let Lat2 = Number(this.markerLocation[0].Lat);
+    let Lon2 = Number(this.markerLocation[0].Lon);
+
     this.map = L.map("mapLeaflet", {
-      center: [Lat, Lon],
+      center: [Lat2, Lon2],
       zoom: 15,
       zoomControl: true
     });
@@ -100,6 +94,10 @@ export class GeolocationPage implements OnInit {
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(
       this.map
     );
+
+    L.marker([Lat2, Lon2], { draggable: false })
+      .addTo(this.map)
+      .bindPopup("This is a location you need to find");
   }
 
   ionMakeRoute() {
