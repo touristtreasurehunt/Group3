@@ -40,7 +40,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     IonicModule.forRoot(),
     AppRoutingModule,
     FontAwesomeModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule

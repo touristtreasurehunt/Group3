@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PlacesI } from "../../models/places.interface";
-import { ConnectionService } from "../../services/connection.service";
+import { CssSelector } from '@angular/compiler';
+import { faDeaf } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-canary-h',
@@ -9,22 +9,22 @@ import { ConnectionService } from "../../services/connection.service";
 })
 export class CanaryHPage implements OnInit {
 
-
-  places: PlacesI[];
-
-  slides: {titulo: string, link: string}[] =[
+  slides: {titulo: string, cssId: string, link: string}[] =[
     {
       titulo: 'Triana',
-      link: '/monumentlist'
+      cssId: 'slideCard',
+      link: '/triana'
     }, {
       titulo: 'Vegueta',
+      cssId: 'slideCard',
       link: '/triana'
     }, {
       titulo: 'Alberta',
+      cssId: 'slideCard',
       link: '/triana'
     }, {
       titulo: 'Roque Nublo',
-
+      cssId: 'slideCard',
       link: '/triana'
     }
   ];
@@ -36,13 +36,9 @@ export class CanaryHPage implements OnInit {
     autoplay: false,
   }
 
-  constructor(private connectionService: ConnectionService) { }
+  constructor() { }
 
   ngOnInit() {
-    // this.connectionService.getPlaces().subscribe(res => {
-    //   console.log('Lugares', res);
-    // });
-    // this.connectionService.getPlaces().subscribe(res => this.places = res);
   }
 
 }

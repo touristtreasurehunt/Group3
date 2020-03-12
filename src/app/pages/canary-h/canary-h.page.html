@@ -12,7 +12,7 @@
     <div class="bartxt">Experience</div>
     
     <ion-slides class="slide-full" [options]="sliderConfig">
-      <ion-slide *ngFor="let slide of slides" routerLink="/monumentlist" class="slide">
+      <ion-slide *ngFor="let slide of slides" [routerLink]="slide.link" class="slide">
         <ion-card>
           <ion-card-header>
             <ion-card-title>{{ slide.titulo }}</ion-card-title>

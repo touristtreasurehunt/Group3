@@ -50,7 +50,7 @@ ion-content{
 svg{
     margin-top: -5%;
     transform: rotate(0deg);
-    margin-left: -10%;
+    margin-left: -700%;
 }
 
 ion-button{
@@ -71,12 +71,12 @@ ion-button h5{
 }
 
 .bar{
-    width: 1%;
+    width: 1.5%;
     height: 2.5%;
     position: absolute;
     background: #F9D54A;
     left: 5%;
-    top: 48%;
+    top: 46.80%;
 }
 .bartxt{
     position: absolute;
@@ -86,7 +86,7 @@ ion-button h5{
     font-family: 'Quicksand-regular';
     color: #0768A9;
     left: 7%;
-    top: 56%;
+    top: 55%;
 }
 
 .slide-full{
@@ -98,9 +98,8 @@ ion-button h5{
 
 ion-card{
     overflow: unset !important;
-    height: 80%;
+    height: 65%;
     width: 100%;
-    box-shadow: 0px 10px 12px 0px rgba(0,0,0,0.75);
 }
 
 ion-card-header{
