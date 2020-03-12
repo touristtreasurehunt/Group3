@@ -1,277 +1,286 @@
-ion-content{
-    overflow: hidden;
+ion-content {
+  overflow: hidden;
 }
 
-#ionBody{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: #fff;
-    z-index: 1;
+#ionBody {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #fff;
+  z-index: 1;
 }
 
-.prueba{
-    filter: blur(1.5em);
-    transition-duration: 1s;
+.prueba {
+  filter: blur(1.5em);
+  transition-duration: 1s;
 }
-
-
-// .contenedor {
-// 	width: 90%;
-// }
 
 /* ------------------------- */
 /* POPUP */
 /* ------------------------- */
 
 .overlay {
-    height: 90%;
-    width: 90%;
-	background: rgba(0,0,0,.3);
-	position: absolute;
-	top: 5%;
-	left: 5%;
-	align-items: center;
-	justify-content: center;
-	display: flex;
-    visibility: hidden;
-    z-index: 900;
+  height: 90%;
+  width: 90%;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  visibility: hidden;
+  z-index: 900;
 }
 
 .overlay.active {
-	visibility: visible;
+  visibility: visible;
 }
 
 .popup {
-    width: 100%;
-    height: 100%;
-	background: #F8F8F8;
-	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
-	border-radius: 3px;
-	font-family: 'Montserrat', sans-serif;
-	padding: 20px;
-	text-align: center;
-	transition: .3s ease all;
-	transform: scale(0.7);
-	opacity: 0;
+  width: 100%;
+  position: relative;
+  height: 100%;
+  background: #f8f8f8;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  font-family: "Montserrat", sans-serif;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s ease all;
+  transform: scale(0.7);
+  opacity: 0;
 }
 
-#buttonMyLocation{
-    height: 5%;
-    width: 60%;
-    position: absolute;
-    top: 87.75%;
-    left: 20%;
-    opacity: .82;
-    --background: #F1C723;
-    --background-hover: #F1C723;
-    --border-color: #0768A9;
-    --border-width: 1px;
-    --border-style: solid;
-    z-index: 10;
-    animation-delay: 1.2s;
+.buttonMyLocation {
+  display: block;
+  position: relative;
+  top: 85%;
+  margin-bottom: 10px;
+  --background: #f1c723;
+  --background-hover: #f1c723;
+  --border-color: #0768a9;
+  --border-width: 1px;
+  --border-style: solid;
+  z-index: 10000;
+  animation-delay: 1.2s;
 }
 
-#buttonMyLocation h5{
-    font-size: 100%;
-    margin-top: 6%;
-    text-shadow: 0% 3% 4% #616161;
+.buttonMyLocation h5 {
+  padding: 10px 20px;
+  text-shadow: 0% 3% 4% #616161;
 }
 
-#buttonCloseMap{
-    width: 15%;
-    height: 8%;
-    position: absolute;
-    border-radius: 50%;
-    z-index: 2;
-    top: 2.5%;
-    left: 80%;
-    background: none;
-    box-shadow: 0% 3% 10% 0% #616161;
+#buttonCloseMap {
+  width: 15%;
+  height: 8%;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 20000000;
+  top: 2.5%;
+  left: 80%;
+  background: none;
+  box-shadow: 0% 3% 10% 0% #616161;
 }
-ion-icon[name=close]{
-    color: #0768A9;
-    width: 80%;
-    height: 80%;
-    margin-top: 25%;
-    margin-left: 25%;
-  }
+
+ion-icon[name="close"] {
+  color: #0768a9;
+  width: 80%;
+  height: 80%;
+  margin-top: 25%;
+  margin-left: 25%;
+}
 
 /* ------------------------- */
 /* ANIMACIONES */
 /* ------------------------- */
-.popup.active {	transform: scale(1); opacity: 1; }
-.popup.active h3 { animation: entradaTitulo .8s ease .5s forwards; }
-.popup.active h4 { animation: entradaSubtitulo .8s ease .5s forwards; }
-.popup.active .contenedor-inputs { animation: entradaInputs 1s linear 1s forwards; }
-
-
-.slide-full{
-    height: 45% !important;
-    margin-top: 0%;
-    z-index: 1;
+.popup.active {
+  transform: scale(1);
+  opacity: 1;
 }
 
-svg{
-    margin-top: -10%;
-    transform: rotate(0deg);
-    margin-left: -700px;
-    z-index: 2;
-    position: absolute;
+.popup.active h3 {
+  animation: entradaTitulo 0.8s ease 0.5s forwards;
 }
 
-#buttonMap{
-    width: 15%;
-    height: 8%;
-    position: absolute;
-    border-radius: 50%;
-    z-index: 2;
-    top: 37.5%;
-    left: 75%;
-    background: #F1C723;
-    box-shadow: 0% 3% 10% 0% #616161;
+.popup.active h4 {
+  animation: entradaSubtitulo 0.8s ease 0.5s forwards;
 }
 
-#buttonMap ion-icon{
-    color: #fff;
-    width: 50%;
-    height: 50%;
-    margin-top: 25%;
-    margin-left: 25%;
+.popup.active .contenedor-inputs {
+  animation: entradaInputs 1s linear 1s forwards;
 }
 
-#text{
-    width: 80%;
-    left: 10%;
-    height: 60%;
-    position: absolute;
-    top: 40%;
-    z-index: 2;
+.slide-full {
+  height: 45% !important;
+  margin-top: 0%;
+  z-index: 1;
 }
 
-#text h1{
-    position: absolute;
-    top: 7%;
-    left: -3.5%;
-    color: #000;
-    text-transform: uppercase;
-    // font-weight: bold;
-    font-size: 120%;
-    font-family: 'neueM';
-    text-shadow: 0% 0% 1% #616161;
+svg {
+  margin-top: -10%;
+  transform: rotate(0deg);
+  margin-left: -700px;
+  z-index: 2;
+  position: absolute;
 }
 
-#text ion-icon{
-    width: 10%;
-    height: 4%;
-    position: absolute;
+#buttonMap {
+  width: 15%;
+  height: 8%;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 2;
+  top: 37.5%;
+  left: 75%;
+  background: #f1c723;
+  box-shadow: 0% 3% 10% 0% #616161;
 }
 
-#icon{
-    width: 10%;
-    height: 6% !important;
-    color: #B9B9B9;
-    left: -5%;
-    top: 7%;
+#buttonMap ion-icon {
+  color: #fff;
+  width: 50%;
+  height: 50%;
+  margin-top: 25%;
+  margin-left: 25%;
 }
 
-#text p:nth-child(2){
-    position: absolute;
-    top: 2.2%;
-    left: 5%;
-    font-weight: bold;
-    font-size: 90%;
-    opacity: .7;
-    color: #A2A2A2;
-    font-family: 'Quicksand-light';
-    text-shadow: 0% 0% 1% #161616;
+#text {
+  width: 80%;
+  left: 10%;
+  height: 60%;
+  position: absolute;
+  top: 40%;
+  z-index: 2;
 }
 
-#text p:nth-child(10){
-    position: absolute;
-    top: 23.5%;
-    left: 30%;
-    font-weight: bold;
-    font-size: 80%;
-    opacity: .7;
-    color: #A2A2A2;
-    font-family: 'Quicksand-light';
-    text-shadow: 0% 0% 1% #161616;
+#text h1 {
+  position: absolute;
+  top: 7%;
+  left: -3.5%;
+  color: #000;
+  text-transform: uppercase;
+  // font-weight: bold;
+  font-size: 120%;
+  font-family: "neueM";
+  text-shadow: 0% 0% 1% #616161;
 }
 
-#text p:nth-child(11){
-    position: absolute;
-    top: 29.5%;
-    font-size: 100%;
-    color: #000;
-    font-family: 'Quicksand-light';
-    line-height: 100%;
-    font-weight: bold;
+#text ion-icon {
+  width: 10%;
+  height: 4%;
+  position: absolute;
 }
 
-#text p:nth-child(12){
-    position: absolute;
-    top: 37%;
-    font-size: 80%;
-    color: #000;
-    font-family: 'Quicksand-medium';
-    line-height: 100%;
+#icon {
+  width: 10%;
+  height: 6% !important;
+  color: #b9b9b9;
+  left: -5%;
+  top: 7%;
 }
 
-#icon1{
-    color: #0768A9;
-    text-shadow: 0% 3% 4%  #000000;
-    left: -5%;
-    top: 28%;
+#text p:nth-child(2) {
+  position: absolute;
+  top: 2.2%;
+  left: 5%;
+  font-weight: bold;
+  font-size: 90%;
+  opacity: 0.7;
+  color: #a2a2a2;
+  font-family: "Quicksand-light";
+  text-shadow: 0% 0% 1% #161616;
 }
 
-#icon2{
-    color: #F1C723;
-    top: 28%;
-}
-#icon3{
-    color: #0768A9;
-    left: 5%;
-    top: 28%;
-}
-#icon4{
-    color: #F1C723;
-    left: 10%;
-    top: 28%;
-}
-#icon5{
-    color: #0768A9;
-    left: 15%;
-    top: 28%;
-}
-#icon6{
-    color: #F1C723;
-    left: 20%;
-    top: 28%;
+#text p:nth-child(10) {
+  position: absolute;
+  top: 23.5%;
+  left: 30%;
+  font-weight: bold;
+  font-size: 80%;
+  opacity: 0.7;
+  color: #a2a2a2;
+  font-family: "Quicksand-light";
+  text-shadow: 0% 0% 1% #161616;
 }
 
-#hr{
-    width: 120%;
-    height: 1px;
-    background: #D6D6D6;
-    position: absolute;
-    top: 90%;
-    left: 0%;
+#text p:nth-child(11) {
+  position: absolute;
+  top: 29.5%;
+  font-size: 100%;
+  color: #000;
+  font-family: "Quicksand-light";
+  line-height: 100%;
+  font-weight: bold;
 }
 
-ion-button{
-    width: 50%;
-    height: 5%;
-    position: absolute;
-    top: 92%;
-    left: 25%;
-    z-index: 3;
-    --background: #0768A9;
-    --background-hover: #0768A9;
-    --border-color: #FFFFFF;
-    --border-width: 1px;
-    --border-style: solid;
-    font-family: 'Quicksand-regular';
+#text p:nth-child(12) {
+  position: absolute;
+  top: 37%;
+  font-size: 80%;
+  color: #000;
+  font-family: "Quicksand-medium";
+  line-height: 100%;
+}
+
+#icon1 {
+  color: #0768a9;
+  text-shadow: 0% 3% 4% #000000;
+  left: -5%;
+  top: 28%;
+}
+
+#icon2 {
+  color: #f1c723;
+  top: 28%;
+}
+
+#icon3 {
+  color: #0768a9;
+  left: 5%;
+  top: 28%;
+}
+
+#icon4 {
+  color: #f1c723;
+  left: 10%;
+  top: 28%;
+}
+
+#icon5 {
+  color: #0768a9;
+  left: 15%;
+  top: 28%;
+}
+
+#icon6 {
+  color: #f1c723;
+  left: 20%;
+  top: 28%;
+}
+
+#hr {
+  width: 120%;
+  height: 1px;
+  background: #d6d6d6;
+  position: absolute;
+  top: 90%;
+  left: 0%;
+}
+
+ion-button {
+  width: 50%;
+  height: 5%;
+  position: absolute;
+  top: 92%;
+  left: 25%;
+  z-index: 3;
+  --background: #0768a9;
+  --background-hover: #0768a9;
+  --border-color: #ffffff;
+  --border-width: 1px;
+  --border-style: solid;
+  font-family: "Quicksand-regular";
 }
 
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -280,201 +289,227 @@ ion-button{
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#ionBody2{
+#ionBody2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #000;
+  z-index: 999;
+  // visibility: hidden;
+}
+
+.slide-full2 {
+  height: 100% !important;
+  margin-top: 0%;
+  --bullet-background: #fff;
+  --bullet-background-active: #f1c723;
+  z-index: 1;
+}
+
+.slide-card {
+  height: 100%;
+  width: 100% !important;
+  border-radius: 15px;
+  background-size: cover;
+  margin-top: -5%;
+  user-select: none;
+}
+
+#slide-1 {
+  width: 100%;
+  background: url(../../../assets/img/slides/photo-of-waves-on-ocean-3331119.jpg);
+  background-size: cover;
+}
+
+#slide-2 {
+  background: url(../../../assets/img/slides/photo-of-ocean-waves-near-seashore-during-sunset-982673.jpg);
+  background-size: cover;
+}
+
+#slide-3 {
+  background: url(../../../assets/img/slides/aerial-photography-of-cinque-terre-in-greece-2422259.jpg);
+  background-size: cover;
+}
+
+#op {
+  width: 120%;
+  height: 60%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.49) 16%,
+    rgba(0, 0, 0, 1) 39%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  position: absolute;
+  top: 40%;
+  color: #fff;
+  z-index: 2;
+}
+
+#text2 {
+  width: 80%;
+  left: 10%;
+  height: 60%;
+  position: absolute;
+  top: 40%;
+  color: #fff;
+  z-index: 2;
+}
+
+#text2 h1 {
+  position: absolute;
+  top: 20%;
+  left: -10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "neueM";
+  text-shadow: 0px 3px 4px #000000;
+}
+
+#text2 p {
+  position: absolute;
+  top: 37%;
+  font-size: 11px;
+  opacity: 0.47;
+  color: #fff;
+  font-family: "Quicksand-light";
+  text-shadow: 0px 3px 4px #000000;
+  line-height: 15px;
+}
+
+#text2 p:nth-child(2) {
+  top: 17%;
+  left: 5%;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+#text2 p:nth-child(11) {
+  top: 61.5%;
+  left: 34%;
+  font-weight: bold;
+  font-size: 13px;
+  opacity: 0.53;
+}
+
+#text2 ion-icon {
+  width: 10%;
+  height: 11px;
+  position: absolute;
+}
+
+#iconR {
+  height: 6% !important;
+  position: absolute;
+  left: -6%;
+  top: 18%;
+  font-size: 30em;
+  opacity: 0.53;
+}
+
+#icon7 {
+  color: #fff;
+  top: 66.25%;
+}
+
+#icon8 {
+  color: #0768a9;
+  left: 5%;
+  top: 66.25%;
+}
+
+#icon9 {
+  color: #f1c723;
+  left: 10%;
+  top: 66.25%;
+}
+
+#icon10 {
+  color: #fff;
+  left: 15%;
+  top: 66.25%;
+}
+
+#icon11 {
+  color: #0768a9;
+  left: 20%;
+  top: 66.25%;
+}
+
+#icon12 {
+  color: #f1c723;
+  left: 25%;
+  top: 66.25%;
+}
+
+.swipeUps {
+  width: 100%;
+  height: 10%;
+  bottom: 0;
+  position: absolute;
+  z-index: 2;
+}
+
+.swipeUps ion-icon {
+  width: 10%;
+  color: #f1c723;
+  position: absolute;
+  top: -49%;
+  left: 45%;
+  animation: arrows 2s infinite;
+}
+
+.swipeUps ion-icon:nth-child(2) {
+  top: -42%;
+  left: 45%;
+  animation-delay: 0.2s;
+}
+
+.swipeUps ion-icon:nth-child(3) {
+  top: -35%;
+  left: 45%;
+  animation-delay: 0.4s;
+}
+
+.swipeUps p {
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Quicksand-light";
+  margin-top: 2%;
+}
+
+@keyframes arrows {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* ==========================================================================
+   Leaflet maps
+   ========================================================================== */
+
+.geo_maps {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  #mapLeaflet {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    position: absolute;
-    background: #000;
-    z-index: 999;
-    // visibility: hidden;
-}
-
-.slide-full2{
-    height: 100% !important;
-    margin-top: 0%;
-    --bullet-background: #fff;
-    --bullet-background-active: #F1C723;
-    z-index: 1;
-}
-
-.slide-card{
-    height: 100%;
-    width: 100% !important;
-    border-radius: 15px;
-    background-size: cover;
-    margin-top: -5%;
-    user-select: none;
-}
-
-#slide-1{
-    width: 100%;
-    background: url(../../../assets/img/slides/photo-of-waves-on-ocean-3331119.jpg);
-    background-size: cover;
-}
-
-#slide-2{
-    background: url(../../../assets/img/slides/photo-of-ocean-waves-near-seashore-during-sunset-982673.jpg);
-    background-size: cover;
-}
-
-#slide-3{
-    background: url(../../../assets/img/slides/aerial-photography-of-cinque-terre-in-greece-2422259.jpg);
-    background-size: cover;
-}
-
-#op{
-    width: 120%;
-    height: 60%;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.49) 16%, rgba(0,0,0,1) 39%, rgba(0,0,0,1) 100%);
-    position: absolute;
-    top: 40%;
-    color: #fff;
-    z-index: 2;
-}
-
-#text2{
-    width: 80%;
-    left: 10%;
-    height: 60%;
-    position: absolute;
-    top: 40%;
-    color: #fff;
-    z-index: 2;
-}
-
-#text2 h1{
-    position: absolute;
-    top: 20%;
-    left: -10px;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 18px;
-    font-family: 'neueM';
-    text-shadow: 0px 3px 4px #000000;
-}
-
-#text2 p{
-    position: absolute;
-    top: 37%;
-    font-size: 11px;
-    opacity: .47;
-    color: #fff;
-    font-family: 'Quicksand-light';
-    text-shadow: 0px 3px 4px #000000;
-    line-height: 15px;
-}
-
-
-
-#text2 p:nth-child(2){
-    top: 17%;
-    left: 5%;
-    font-weight: bold;
-    font-size: 11px;
-}
-
-#text2 p:nth-child(11){
-    top: 61.5%;
-    left: 34%;
-    font-weight: bold;
-    font-size: 13px;
-    opacity: .53;
-}
-
-#text2 ion-icon{
-    width: 10%;
-    height: 11px;
-    position: absolute;
-
-}
-
-#iconR{
-    height: 6% !important;
-    position: absolute;
-    left: -6%;
-    top: 18%;
-    font-size: 30em;
-    opacity: .53;
-}
-
-#icon7{
-    color: #fff;
-    top: 66.25%;
-}
-
-#icon8{
-    color: #0768A9;
-    left: 5%;
-    top: 66.25%;
-}
-#icon9{
-    color: #F1C723;
-    left: 10%;
-    top: 66.25%;
-}
-#icon10{
-    color: #fff;
-    left: 15%;
-    top: 66.25%;
-}
-#icon11{
-    color: #0768A9;
-    left: 20%;
-    top: 66.25%;
-}
-#icon12{
-    color: #F1C723;
-    left: 25%;
-    top: 66.25%;
-}
-
-.swipeUps{
-    width: 100%;
-    height: 10%;
-    bottom: 0;
-    position: absolute;
-    z-index: 2;
-}
-
-.swipeUps ion-icon{
-    width: 10%;
-    color: #F1C723;
-    position: absolute;
-    top: -49%;
-    left: 45%;
-    animation: arrows 2s infinite;
-}
-
-.swipeUps ion-icon:nth-child(2){
-    top: -42%;
-    left: 45%;
-    animation-delay: .2s;
-}
-
-.swipeUps ion-icon:nth-child(3){
-    top: -35%;
-    left: 45%;
-    animation-delay: .4s;
-}
-
-.swipeUps p{
-    text-align: center;
-    color: #fff;
-    font-size: 16px;
-    font-family: 'Quicksand-light';
-    margin-top: 2%;
-}
-  
-@keyframes arrows{
-    0%{
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    50%{
-      opacity: 1;
-    }
-    100%{
-      opacity: 0;
-      transform: translateY(-10px);
-    }
+  }
 }
