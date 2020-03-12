@@ -506,9 +506,8 @@ ion-button {
   width: 100%;
   height: 100%;
   background: blue;
-  .mapLeaflet {
-    width: 10px;
-    height: 10px;
-    display: block;
+  #mapLeaflet {
+    width: 100px;
+    height: 100px;
   }
 }

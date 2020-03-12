@@ -87,8 +87,6 @@ export class TrianaPage implements OnInit {
   }
 
   ionViewDidEnter() {
-    let Lat1 = Number(this.myLocation[0].Lat);
-    let Lon1 = Number(this.myLocation[0].Lon);
     let Lat2 = Number(this.markerLocation[0].Lat);
     let Lon2 = Number(this.markerLocation[0].Lon);
 
