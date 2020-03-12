@@ -14,20 +14,33 @@ export class GamePage implements OnInit {
   }
 
   ionViewWillEnter() {
-    // tslint:disable-next-line: only-arrow-functions
     setTimeout(function() {
       const curtain = $('#curtain');
       curtain.addClass('active');
     }, 50);
-    // tslint:disable-next-line: only-arrow-functions
+    setTimeout(function() {
+      const bg = $('#bg');
+      bg.addClass('bounceIn');
+    }, 1500);
+    setTimeout(function() {
+      const redondo = $('.redondo');
+      redondo.addClass('bounceInDown');
+    }, 1600);
     setTimeout(function() {
       const redondo2 = $('.redondo2');
-      const redondo = $('.redondo');
-      const bg = $('#bg');
-      redondo2.addClass('bounceIn');
-      redondo.addClass('bounceIn');
-      bg.addClass('bounceIn')
-    }, 1500);
+      const svg2 = $('#svg2');
+      const svg = $('#svg');
+      redondo2.addClass('bounceInDown');
+      svg2.addClass('bounceInLeft');
+      svg.addClass('bounceInRight');
+    }, 1750);
+    setTimeout(function() {
+      const button = $('.buttonOption');
+      button.addClass('fadeIn');
+    }, 3000);
+    setTimeout(function() {
+      const button = $('.container');
+      button.addClass('fadeIn');
+    }, 3500);
   }
-
 }
