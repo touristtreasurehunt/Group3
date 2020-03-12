@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PlacesI } from "../../models/places.interface";
+import { Places } from "../../models/places.interface";
 import { ConnectionService } from "../../services/connection.service";
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-canary-h',
@@ -10,7 +12,10 @@ import { ConnectionService } from "../../services/connection.service";
 export class CanaryHPage implements OnInit {
 
 
-  places: PlacesI[];
+  arrayPlaces: any = [{
+    id: "",
+    data: {} as Places
+  }];
 
   slides: {titulo: string, link: string}[] =[
     {
@@ -36,13 +41,27 @@ export class CanaryHPage implements OnInit {
     autoplay: false,
   }
 
-  constructor(private connectionService: ConnectionService) { }
+  constructor(private connectionService: ConnectionService, private router: Router, private api: ApiService) { }
 
   ngOnInit() {
-    // this.connectionService.getPlaces().subscribe(res => {
-    //   console.log('Lugares', res);
-    // });
-    // this.connectionService.getPlaces().subscribe(res => this.places = res);
+    this.getListPlaces();
+  }
+
+  getListPlaces() {
+    this.connectionService.getCollection("places").subscribe((query) => {
+      this.arrayPlaces = [];
+      query.forEach((datasPlaces: any) => {
+        this.arrayPlaces.push({
+          id: datasPlaces.payload.doc.id,
+          data: datasPlaces.payload.doc.data()
+        });
+      })      
+    });
+  }
+
+  goReceiber(idPlace) {
+    this.api.sendObjectSource(idPlace);
+    this.router.navigate(['/monumentlist']);
   }
 
 }

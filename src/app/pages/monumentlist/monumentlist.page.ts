@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-monumentlist',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MonumentlistPage implements OnInit {
 
-  constructor() { }
+  private place: string; 
+
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.api.$getObjectSource.subscribe(data => console.log(data));
   }
 
 }
