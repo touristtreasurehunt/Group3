@@ -5,10 +5,21 @@
         <div id="buttonCloseMap" (click)="closePopUp()">
           <ion-icon name="close"></ion-icon>
         </div>
-
-        <ion-button id="buttonMyLocation">
-          <h5>My Location</h5>
-        </ion-button>
+        <div class="geo_maps">
+          <div id="mapLeaflet"></div>
+          <ion-button
+            expand="block"
+            class="buttonMyLocation"
+            (click)="locatePosition()"
+            ><h5>My location</h5></ion-button
+          >
+          <ion-button
+            expand="block"
+            class="buttonMyLocation"
+            (click)="ionMakeRoute()"
+            ><h5>Make Route</h5></ion-button
+          >
+        </div>
       </div>
     </div>
   </div>
