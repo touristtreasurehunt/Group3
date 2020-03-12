@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import * as $ from "jquery";
 import * as L from "leaflet";
+import { Map, tileLayer, marker, LatLng } from "leaflet";
 import "leaflet-routing-machine";
 @Component({
   selector: "app-triana",
@@ -86,6 +87,24 @@ export class TrianaPage implements OnInit {
     console.log("dasdasda");
   }
 
+  // Tracks your location
+  locatePosition() {
+    this.map
+      .locate({ setView: false, watch: true, maximumAge: 5 })
+      .on("locationfound", (e: any) => {
+        if (this.newMarker != undefined) {
+          this.newMarker.setLatLng(e.latlng);
+        } else {
+          this.newMarker = marker([e.latitude, e.longitude], {
+            draggable: false
+          }).addTo(this.map);
+        }
+
+        this.myLocation[0].Lat = e.latitude;
+        this.myLocation[0].Lon = e.longitude;
+      });
+  }
+
   ionViewDidEnter() {
     let Lat2 = Number(this.markerLocation[0].Lat);
     let Lon2 = Number(this.markerLocation[0].Lon);
@@ -103,5 +122,17 @@ export class TrianaPage implements OnInit {
     L.marker([Lat2, Lon2], { draggable: false })
       .addTo(this.map)
       .bindPopup("This is a location you need to find");
+  }
+
+  async ionMakeRoute() {
+    let Lat1 = Number(this.myLocation[0].Lat);
+    let Lon1 = Number(this.myLocation[0].Lon);
+    let Lat2 = Number(this.markerLocation[0].Lat);
+    let Lon2 = Number(this.markerLocation[0].Lon);
+
+    L.Routing.control({
+      waypoints: [L.latLng(Lat1, Lon1), L.latLng(Lat2, Lon2)],
+      routeWhileDragging: true
+    }).addTo(this.map);
   }
 }
