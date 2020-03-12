@@ -100,7 +100,7 @@ export class GeolocationPage implements OnInit {
       .bindPopup("This is a location you need to find");
   }
 
-  ionMakeRoute() {
+  async ionMakeRoute() {
     let Lat1 = Number(this.myLocation[0].Lat);
     let Lon1 = Number(this.myLocation[0].Lon);
     let Lat2 = Number(this.markerLocation[0].Lat);
