@@ -70,7 +70,7 @@ ion-content{
     left: 4%;
 }
 
-#contenedor div:nth-child(2).img2{
+#contenedor div:nth-child(2) .img2{
     height: 35%;
     width: 35%;
     position: absolute;
@@ -79,7 +79,7 @@ ion-content{
     left: 22%;
 }
 
-#contenedor div:nth-child(1) h1{
+#contenedor div:nth-child(2) h1{
     width: 100%;
     position: absolute;
     top: -25%;
@@ -136,3 +136,6 @@ ion-content{
     top: 32.5%;
     left: 77%;
   }
+
+
+  
