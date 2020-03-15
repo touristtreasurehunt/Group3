@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import { ConnectionService } from 'src/app/services/connection.service';
 
 @Component({
   selector: 'app-monumentlist',
@@ -10,10 +11,23 @@ export class MonumentlistPage implements OnInit {
 
   private place: string; 
 
-  constructor(private api: ApiService) { }
+  arrayBuildings: any = [];
+
+  constructor(private api: ApiService, private connectionService: ConnectionService) { }
 
   ngOnInit() {
-    this.api.$getObjectSource.subscribe(data => console.log(data));
+    this.getBuildings();
+  }
+
+  getBuildings() {
+    this.connectionService.getCollection("places").subscribe((query) => {
+      this.arrayBuildings = [];
+      query.forEach((datasPlaces: any) => {
+        if(datasPlaces.payload.doc.id == this.api.place) {
+          this.arrayBuildings = datasPlaces.payload.doc.data().buildings;
+        }
+      })      
+    });
   }
 
 }
