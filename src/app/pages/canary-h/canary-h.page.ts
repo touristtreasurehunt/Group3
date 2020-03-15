@@ -17,23 +17,6 @@ export class CanaryHPage implements OnInit {
     data: {} as Places
   }];
 
-  slides: {titulo: string, link: string}[] =[
-    {
-      titulo: 'Triana',
-      link: '/monumentlist'
-    }, {
-      titulo: 'Vegueta',
-      link: '/triana'
-    }, {
-      titulo: 'Alberta',
-      link: '/triana'
-    }, {
-      titulo: 'Roque Nublo',
-
-      link: '/triana'
-    }
-  ];
-
   sliderConfig ={
     spaceBetween: 0,
     // centeredSlides: true,
@@ -60,7 +43,7 @@ export class CanaryHPage implements OnInit {
   }
 
   goReceiber(idPlace) {
-    this.api.sendObjectSource(idPlace);
+    this.api.place = idPlace;
     this.router.navigate(['/monumentlist']);
   }
 

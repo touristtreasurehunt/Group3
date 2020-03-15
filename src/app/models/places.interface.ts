@@ -1,5 +1,3 @@
 export interface Places {
-    id: string;
-    name: string;
-    location: string;
+    buildings : Array<string>;
 }

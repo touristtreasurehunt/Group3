@@ -6,12 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ApiService {
 
-  private objectSource = new BehaviorSubject<{}>({});
-  $getObjectSource = this.objectSource.asObservable();
+  place: string;
 
   constructor() { }
-
-  sendObjectSource(data: any) {
-    this.objectSource.next(data);
-  }
 }
