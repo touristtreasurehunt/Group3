@@ -17,12 +17,11 @@ ion-content{
     box-shadow: 0px 0px 10px #b1b1b1;
 }
 
-
-#list{
+#contenedor div:nth-child(1){
     top: 5%;
 }
 
-#list #img1{
+#contenedor div:nth-child(1) .img1{
     height: 6vh;
     width: 6vh;
     position: absolute;
@@ -31,7 +30,7 @@ ion-content{
     left: 4%;
 }
 
-#list #img2{
+#contenedor div:nth-child(1) .img2{
     height: 35%;
     width: 35%;
     position: absolute;
@@ -40,7 +39,7 @@ ion-content{
     left: 22%;
 }
 
-#list h1{
+#contenedor div:nth-child(1) h1{
     width: 100%;
     position: absolute;
     top: -25%;
@@ -49,7 +48,7 @@ ion-content{
     font-family: 'Quicksand-regular';
 }
 
-#list ion-icon{
+#contenedor div:nth-child(1) ion-icon{
     color: #0768A9;
     width: 30%;
     height: 30%;
@@ -58,12 +57,11 @@ ion-content{
     left: 77%;
   }
 
-
-#list2{
+#contenedor div:nth-child(2){
     top: 20%;
 }
 
-#list2 #img1{
+#contenedor div:nth-child(2) .img1{
     height: 6vh;
     width: 6vh;
     position: absolute;
@@ -72,7 +70,7 @@ ion-content{
     left: 4%;
 }
 
-#list2 #img2{
+#contenedor div:nth-child(2).img2{
     height: 35%;
     width: 35%;
     position: absolute;
@@ -81,7 +79,7 @@ ion-content{
     left: 22%;
 }
 
-#list2 h1{
+#contenedor div:nth-child(1) h1{
     width: 100%;
     position: absolute;
     top: -25%;
@@ -90,7 +88,7 @@ ion-content{
     font-family: 'Quicksand-regular';
 }
 
-#list2 ion-icon{
+#contenedor div:nth-child(2) ion-icon{
     color: #0768A9;
     width: 30%;
     height: 30%;
@@ -99,12 +97,11 @@ ion-content{
     left: 77%;
   }
 
-
-#list3{
+#contenedor div:nth-child(3){
     top: 35%;
 }
 
-#list3 #img1{
+#contenedor div:nth-child(3) .img1{
     height: 6vh;
     width: 6vh;
     position: absolute;
@@ -113,7 +110,7 @@ ion-content{
     left: 4%;
 }
 
-#list3 #img2{
+#contenedor div:nth-child(3) .img2{
     height: 35%;
     width: 35%;
     position: absolute;
@@ -122,7 +119,7 @@ ion-content{
     left: 22%;
 }
 
-#list3 h1{
+#contenedor div:nth-child(3) h1{
     width: 100%;
     position: absolute;
     top: -25%;
@@ -131,7 +128,7 @@ ion-content{
     font-family: 'Quicksand-regular';
 }
 
-#list3 ion-icon{
+#contenedor div:nth-child(3) ion-icon{
     color: #0768A9;
     width: 30%;
     height: 30%;
