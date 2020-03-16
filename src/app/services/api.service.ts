@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class ApiService {
 
   place: string;
+  building: string;
 
   constructor() { }
 }

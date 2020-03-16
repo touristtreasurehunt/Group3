@@ -3,6 +3,7 @@ import * as $ from "jquery";
 import * as L from "leaflet";
 import { Map, tileLayer, marker, LatLng } from "leaflet";
 import "leaflet-routing-machine";
+import { ApiService } from 'src/app/services/api.service';
 @Component({
   selector: "app-triana",
   templateUrl: "./triana.page.html",
@@ -57,9 +58,11 @@ export class TrianaPage implements OnInit {
     speed: 500
   };
 
-  constructor() {}
+  constructor(private api: ApiService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.api.building);
+  }
 
   TransitionPagePanUp(ev) {
     const e = $("#ionBody2");
