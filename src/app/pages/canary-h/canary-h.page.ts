@@ -28,7 +28,7 @@ export class CanaryHPage implements OnInit {
   }
 
   goMonumentList(idPlace) {
-    this.api.place = idPlace;
+    this.api.idPlace = idPlace;
     this.router.navigate(['/monumentlist']);
   }
 

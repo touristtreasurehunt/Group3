@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Places } from '../models/places.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  place: string;
-  building: string;
+  idPlace: string;
+  idBuilding: string;
+  building: Places;
 
   constructor() { }
 }

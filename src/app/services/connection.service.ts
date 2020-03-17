@@ -24,15 +24,18 @@ export class ConnectionService {
     return places;
   }
 
-  public getBuildings(place) {
-    let buildings = [];
+  public getListBuildings(place) {
+    var arrayBuildings = [];
     this.getCollection(place).subscribe((query) => {
       query.forEach((datasPlaces: any) => {
-        buildings.push(datasPlaces.payload.doc.id);
+        arrayBuildings.push({
+          id: datasPlaces.payload.doc.id,
+          name: datasPlaces.payload.doc.data().name,
+          img: datasPlaces.payload.doc.data().images[0]
+        });
       })
     });
-
-    return buildings;
+    return arrayBuildings;
   }
 
 }

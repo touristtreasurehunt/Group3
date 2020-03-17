@@ -61,7 +61,7 @@ export class TrianaPage implements OnInit {
   constructor(private api: ApiService) {}
 
   ngOnInit() {
-    console.log(this.api.building);
+    console.log(this.api.idBuilding);
   }
 
   TransitionPagePanUp(ev) {

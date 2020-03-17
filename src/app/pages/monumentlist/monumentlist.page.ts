@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { ConnectionService } from 'src/app/services/connection.service';
-import { Places } from 'src/app/models/places.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-monumentlist',
@@ -18,26 +18,15 @@ export class MonumentlistPage implements OnInit {
     img: ""
   }];
 
-  constructor(private api: ApiService, private connectionService: ConnectionService) { }
+  constructor(private api: ApiService, private connectionService: ConnectionService, private router: Router) { }
 
   ngOnInit() {
-    this.getBuildings();
+    this.arrayBuildings = this.connectionService.getListBuildings(this.api.idPlace);
   }
 
-  getBuildings() {
-    console.log(this.api.place);
-    
-    this.connectionService.getCollection(this.api.place).subscribe((query) => {
-      this.arrayBuildings = [];
-      query.forEach((datasPlaces: any) => {
-        this.arrayBuildings.push({
-          id: datasPlaces.payload.doc.id,
-          name: datasPlaces.payload.doc.data().name,
-          img: datasPlaces.payload.doc.data().images[0]
-        });
-        console.log(datasPlaces.payload.doc.data().name);
-      })
-    });
+  goBuilding(idBuilding) {
+    this.api.idBuilding = idBuilding;
+    this.router.navigate(['/triana']);
   }
 
 }
