@@ -1,20 +1,8 @@
 <ion-content>
   <div id="contenedor">
-  <div routerLink="/triana">
-    <img src="../../../assets/img/Teatro1.jpg" class="img1" alt="">
-    <h1>Teatro Perez Galdos</h1>
-    <img src="../../../assets/img/stars.png" class="img2" alt="">
-    <ion-icon name="chevron-forward"></ion-icon>
-  </div>
-  <div>
-    <img src="../../../assets/img/Triana1.jpg" class="img1" alt="">
-    <h1>Calle de Triana</h1>
-    <img src="../../../assets/img/stars.png" class="img2" alt="">
-    <ion-icon name="chevron-forward"></ion-icon>
-  </div>
-  <div>
-    <img src="../../../assets/img/SanTelmo1.jpg" class="img1" alt="">
-    <h1>Parque de San Telmo</h1>
+  <div *ngFor="let building of arrayBuildings" (click)="goBuilding(building.id)" >
+    <img src="../../../assets/img/{{ building.img }}" class="img1" alt="">
+    <h1>{{ building.name }}</h1>
     <img src="../../../assets/img/stars.png" class="img2" alt="">
     <ion-icon name="chevron-forward"></ion-icon>
   </div>

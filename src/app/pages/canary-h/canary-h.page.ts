@@ -12,10 +12,7 @@ import { ApiService } from 'src/app/services/api.service';
 export class CanaryHPage implements OnInit {
 
 
-  arrayPlaces: any = [{
-    id: "",
-    data: {} as Places
-  }];
+  arrayPlaces: any = [];
 
   sliderConfig ={
     spaceBetween: 0,
@@ -27,23 +24,11 @@ export class CanaryHPage implements OnInit {
   constructor(private connectionService: ConnectionService, private router: Router, private api: ApiService) { }
 
   ngOnInit() {
-    this.getListPlaces();
+    this.arrayPlaces = this.connectionService.getListPlaces();
   }
 
-  getListPlaces() {
-    this.connectionService.getCollection("places").subscribe((query) => {
-      this.arrayPlaces = [];
-      query.forEach((datasPlaces: any) => {
-        this.arrayPlaces.push({
-          id: datasPlaces.payload.doc.id,
-          data: datasPlaces.payload.doc.data()
-        });
-      })      
-    });
-  }
-
-  goReceiber(idPlace) {
-    this.api.place = idPlace;
+  goMonumentList(idPlace) {
+    this.api.idPlace = idPlace;
     this.router.navigate(['/monumentlist']);
   }
 

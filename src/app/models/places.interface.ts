@@ -1,3 +1,4 @@
 export interface Places {
-    buildings : Array<string>;
+    name: string;
+    images: Array<String>;
 }
