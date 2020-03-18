@@ -1,7 +1,7 @@
 ion-content {
   overflow: hidden;
 }
-
+ 
 #ionBody {
   width: 100%;
   height: 100%;
@@ -9,16 +9,16 @@ ion-content {
   background: #fff;
   z-index: 1;
 }
-
+ 
 .prueba {
   filter: blur(1.5em);
   transition-duration: 1s;
 }
-
+ 
 /* ------------------------- */
 /* POPUP */
 /* ------------------------- */
-
+ 
 .overlay {
   height: 90%;
   width: 90%;
@@ -32,11 +32,11 @@ ion-content {
   visibility: hidden;
   z-index: 900;
 }
-
+ 
 .overlay.active {
   visibility: visible;
 }
-
+ 
 .popup {
   width: 100%;
   position: relative;
@@ -47,50 +47,110 @@ ion-content {
   font-family: "Montserrat", sans-serif;
   padding: 20px;
   text-align: center;
-  transition: 0.3s ease all;
+  transition: .5s ease all;
   transform: scale(0.7);
   opacity: 0;
 }
-
+ 
 .buttonMyLocation {
   display: block;
   position: relative;
-  top: 85%;
-  margin-bottom: 10px;
+  top: 90%;
+  width: 90%;
+  left: 5%;
   --background: #f1c723;
   --background-hover: #f1c723;
-  --border-color: #0768a9;
+  --border-color: #fff;
   --border-width: 1px;
   --border-style: solid;
+  border-radius: 35px;
   z-index: 10000;
+  color: #fff;
+  box-shadow: 0 0 10px #a1a1a1;
   animation-delay: 1.2s;
 }
-
+ 
 .buttonMyLocation h5 {
-  padding: 10px 20px;
-  text-shadow: 0% 3% 4% #616161;
+  line-height: -10px;
+  text-shadow: 0 0 8px #c1c1c1;
+  text-transform: uppercase;
 }
-
+ 
 #buttonCloseMap {
   width: 15%;
   height: 8%;
   position: absolute;
   border-radius: 50%;
   z-index: 20000000;
-  top: 2.5%;
-  left: 80%;
-  background: none;
+  top: 1.5%;
+  left: 84.5%;
+  // background: #fff;
   box-shadow: 0% 3% 10% 0% #616161;
 }
-
+ 
 ion-icon[name="close"] {
   color: #0768a9;
-  width: 80%;
-  height: 80%;
-  margin-top: 25%;
-  margin-left: 25%;
+  width: 100%;
+  height: 100%;
+  // margin-top: ;
+  margin-left: 0;
 }
-
+ 
+ 
+/* ==========================================================================
+   Leaflet maps
+   ========================================================================== */
+ 
+   .geo_maps {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    // background: red;
+  }
+  
+  #mapLeaflet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // visibility: hidden;
+  }
+ 
+  .marker-pin {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 50% 0;
+    background: #c30b82;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 50%;
+    top: 50%;
+    margin: -15px 0 0 -15px;
+  }
+  // to draw white circle
+  .marker-pin::after {
+      content: '';
+      width: 24px;
+      height: 24px;
+      margin: 3px 0 0 3px;
+      background: #fff;
+      position: absolute;
+      border-radius: 50%;
+   }
+  // to align icon
+  .custom-div-icon i {
+     position: absolute;
+     width: 22px;
+     font-size: 22px;
+     left: 0;
+     right: 0;
+     margin: 10px auto;
+     text-align: center;
+  }  
+ 
 /* ------------------------- */
 /* ANIMACIONES */
 /* ------------------------- */
@@ -98,25 +158,25 @@ ion-icon[name="close"] {
   transform: scale(1);
   opacity: 1;
 }
-
+ 
 .popup.active h3 {
   animation: entradaTitulo 0.8s ease 0.5s forwards;
 }
-
+ 
 .popup.active h4 {
   animation: entradaSubtitulo 0.8s ease 0.5s forwards;
 }
-
+ 
 .popup.active .contenedor-inputs {
   animation: entradaInputs 1s linear 1s forwards;
 }
-
+ 
 .slide-full {
   height: 45% !important;
   margin-top: 0%;
   z-index: 1;
 }
-
+ 
 svg {
   margin-top: -10%;
   transform: rotate(0deg);
@@ -124,7 +184,7 @@ svg {
   z-index: 2;
   position: absolute;
 }
-
+ 
 #buttonMap {
   width: 15%;
   height: 8%;
@@ -136,7 +196,7 @@ svg {
   background: #f1c723;
   box-shadow: 0% 3% 10% 0% #616161;
 }
-
+ 
 #buttonMap ion-icon {
   color: #fff;
   width: 50%;
@@ -144,7 +204,7 @@ svg {
   margin-top: 25%;
   margin-left: 25%;
 }
-
+ 
 #text {
   width: 80%;
   left: 10%;
@@ -153,7 +213,7 @@ svg {
   top: 40%;
   z-index: 2;
 }
-
+ 
 #text h1 {
   position: absolute;
   top: 7%;
@@ -165,13 +225,13 @@ svg {
   font-family: "neueM";
   text-shadow: 0% 0% 1% #616161;
 }
-
+ 
 #text ion-icon {
   width: 10%;
   height: 4%;
   position: absolute;
 }
-
+ 
 #icon {
   width: 10%;
   height: 6% !important;
@@ -179,7 +239,7 @@ svg {
   left: -5%;
   top: 7%;
 }
-
+ 
 #text p:nth-child(2) {
   position: absolute;
   top: 2.2%;
@@ -191,7 +251,7 @@ svg {
   font-family: "Quicksand-light";
   text-shadow: 0% 0% 1% #161616;
 }
-
+ 
 #text p:nth-child(10) {
   position: absolute;
   top: 23.5%;
@@ -203,7 +263,7 @@ svg {
   font-family: "Quicksand-light";
   text-shadow: 0% 0% 1% #161616;
 }
-
+ 
 #text p:nth-child(11) {
   position: absolute;
   top: 29.5%;
@@ -213,7 +273,7 @@ svg {
   line-height: 100%;
   font-weight: bold;
 }
-
+ 
 #text p:nth-child(12) {
   position: absolute;
   top: 37%;
@@ -222,43 +282,43 @@ svg {
   font-family: "Quicksand-medium";
   line-height: 100%;
 }
-
+ 
 #icon1 {
   color: #0768a9;
   text-shadow: 0% 3% 4% #000000;
   left: -5%;
   top: 28%;
 }
-
+ 
 #icon2 {
   color: #f1c723;
   top: 28%;
 }
-
+ 
 #icon3 {
   color: #0768a9;
   left: 5%;
   top: 28%;
 }
-
+ 
 #icon4 {
   color: #f1c723;
   left: 10%;
   top: 28%;
 }
-
+ 
 #icon5 {
   color: #0768a9;
   left: 15%;
   top: 28%;
 }
-
+ 
 #icon6 {
   color: #f1c723;
   left: 20%;
   top: 28%;
 }
-
+ 
 #hr {
   width: 120%;
   height: 1px;
@@ -267,7 +327,7 @@ svg {
   top: 90%;
   left: 0%;
 }
-
+ 
 ion-button {
   width: 50%;
   height: 5%;
@@ -282,22 +342,22 @@ ion-button {
   --border-style: solid;
   font-family: "Quicksand-regular";
 }
-
+ 
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+ 
 #ionBody2 {
   width: 100%;
   height: 100%;
   position: absolute;
   background: #000;
   z-index: 999;
-  // visibility: hidden;
+  visibility: hidden;
 }
-
+ 
 .slide-full2 {
   height: 100% !important;
   margin-top: 0%;
@@ -305,7 +365,7 @@ ion-button {
   --bullet-background-active: #f1c723;
   z-index: 1;
 }
-
+ 
 .slide-card {
   height: 100%;
   width: 100% !important;
@@ -314,23 +374,102 @@ ion-button {
   margin-top: -5%;
   user-select: none;
 }
-
+ 
 #slide-1 {
   width: 100%;
-  background: url(../../../assets/img/slides/photo-of-waves-on-ocean-3331119.jpg);
+  background: url(../../../assets/img/Teatro1.jpg);
   background-size: cover;
 }
-
+ 
 #slide-2 {
-  background: url(../../../assets/img/slides/photo-of-ocean-waves-near-seashore-during-sunset-982673.jpg);
+  background: url(../../../assets/img/Teatro2.jpg);
   background-size: cover;
 }
-
+ 
 #slide-3 {
-  background: url(../../../assets/img/slides/aerial-photography-of-cinque-terre-in-greece-2422259.jpg);
+  background: url(../../../assets/img/Teatro3.jpg);
   background-size: cover;
 }
-
+ 
+#slide-4 {
+  width: 100%;
+  background: url(../../../assets/img/SanTelmo1.jpg);
+  background-size: cover;
+}
+ 
+#slide-5 {
+  background: url(../../../assets/img/SanTelmo2.jpg);
+  background-size: cover;
+}
+ 
+#slide-6 {
+  background: url(../../../assets/img/SanTelmo3.jpg);
+  background-size: cover;
+}
+#slide-7 {
+  width: 100%;
+  background: url(../../../assets/img/Triana1.jpg);
+  background-size: cover;
+}
+ 
+#slide-8 {
+  background: url(../../../assets/img/Triana2.jpg);
+  background-size: cover;
+}
+ 
+#slide-9 {
+  background: url(../../../assets/img/Triana3.jpg);
+  background-size: cover;
+}
+ 
+#slide-10 {
+  width: 100%;
+  background: url(../../../assets/img/SantaAna1.jpg);
+  background-size: cover;
+}
+ 
+#slide-11 {
+  background: url(../../../assets/img/SantaAna2.jpg);
+  background-size: cover;
+}
+ 
+#slide-12 {
+  background: url(../../../assets/img/SantaAna3.jpg);
+  background-size: cover;
+}
+ 
+#slide-13 {
+  width: 100%;
+  background: url(../../../assets/img/Ermita1.jpg);
+  background-size: cover;
+}
+ 
+#slide-14 {
+  background: url(../../../assets/img/Ermita2.jpg);
+  background-size: cover;
+}
+ 
+#slide-15 {
+  background: url(../../../assets/img/Ermita3.jpg);
+  background-size: cover;
+}
+ 
+#slide-16 {
+  width: 100%;
+  background: url(../../../assets/img/Colombo1.jpg);
+  background-size: cover;
+}
+ 
+#slide-17 {
+  background: url(../../../assets/img/Colombo2.jpg);
+  background-size: cover;
+}
+ 
+#slide-18 {
+  background: url(../../../assets/img/Colombo3.jpg);
+  background-size: cover;
+}
+ 
 #op {
   width: 120%;
   height: 60%;
@@ -346,7 +485,7 @@ ion-button {
   color: #fff;
   z-index: 2;
 }
-
+ 
 #text2 {
   width: 80%;
   left: 10%;
@@ -356,7 +495,7 @@ ion-button {
   color: #fff;
   z-index: 2;
 }
-
+ 
 #text2 h1 {
   position: absolute;
   top: 20%;
@@ -367,7 +506,7 @@ ion-button {
   font-family: "neueM";
   text-shadow: 0px 3px 4px #000000;
 }
-
+ 
 #text2 p {
   position: absolute;
   top: 37%;
@@ -378,14 +517,14 @@ ion-button {
   text-shadow: 0px 3px 4px #000000;
   line-height: 15px;
 }
-
+ 
 #text2 p:nth-child(2) {
   top: 17%;
   left: 5%;
   font-weight: bold;
   font-size: 11px;
 }
-
+ 
 #text2 p:nth-child(11) {
   top: 61.5%;
   left: 34%;
@@ -393,13 +532,13 @@ ion-button {
   font-size: 13px;
   opacity: 0.53;
 }
-
+ 
 #text2 ion-icon {
   width: 10%;
   height: 11px;
   position: absolute;
 }
-
+ 
 #iconR {
   height: 6% !important;
   position: absolute;
@@ -408,42 +547,42 @@ ion-button {
   font-size: 30em;
   opacity: 0.53;
 }
-
+ 
 #icon7 {
   color: #fff;
   top: 66.25%;
 }
-
+ 
 #icon8 {
   color: #0768a9;
   left: 5%;
   top: 66.25%;
 }
-
+ 
 #icon9 {
   color: #f1c723;
   left: 10%;
   top: 66.25%;
 }
-
+ 
 #icon10 {
   color: #fff;
   left: 15%;
   top: 66.25%;
 }
-
+ 
 #icon11 {
   color: #0768a9;
   left: 20%;
   top: 66.25%;
 }
-
+ 
 #icon12 {
   color: #f1c723;
   left: 25%;
   top: 66.25%;
 }
-
+ 
 .swipeUps {
   width: 100%;
   height: 10%;
@@ -451,7 +590,7 @@ ion-button {
   position: absolute;
   z-index: 2;
 }
-
+ 
 .swipeUps ion-icon {
   width: 10%;
   color: #f1c723;
@@ -460,19 +599,19 @@ ion-button {
   left: 45%;
   animation: arrows 2s infinite;
 }
-
+ 
 .swipeUps ion-icon:nth-child(2) {
   top: -42%;
   left: 45%;
   animation-delay: 0.2s;
 }
-
+ 
 .swipeUps ion-icon:nth-child(3) {
   top: -35%;
   left: 45%;
   animation-delay: 0.4s;
 }
-
+ 
 .swipeUps p {
   text-align: center;
   color: #fff;
@@ -480,36 +619,23 @@ ion-button {
   font-family: "Quicksand-light";
   margin-top: 2%;
 }
-
+ 
 @keyframes arrows {
   0% {
     opacity: 0;
     transform: translateY(10px);
   }
-
+ 
   50% {
     opacity: 1;
   }
-
+ 
   100% {
     opacity: 0;
     transform: translateY(-10px);
   }
 }
+ 
+ 
+ 
 
-/* ==========================================================================
-   Leaflet maps
-   ========================================================================== */
-
-.geo_maps {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  #mapLeaflet {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}

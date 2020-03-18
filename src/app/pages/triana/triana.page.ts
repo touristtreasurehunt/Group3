@@ -84,23 +84,32 @@ export class TrianaPage implements OnInit {
     console.log("dasdasda");
   }
 
-  // Tracks your location
-  locatePosition() {
-    this.map
-      .locate({ setView: false, watch: true, maximumAge: 5 })
-      .on("locationfound", (e: any) => {
-        if (this.newMarker != undefined) {
-          this.newMarker.setLatLng(e.latlng);
-        } else {
-          this.newMarker = marker([e.latitude, e.longitude], {
-            draggable: false
-          }).addTo(this.map);
-        }
+// Tracks your location
+locatePosition() {
+  var me = L.icon({
+    iconUrl: '../../../assets/img/capture.png',
+    iconSize:     [115, 105], 
+    shadowSize:   [50, 64],
+    // // iconAnchor:   [0, 94], 
+    popupAnchor:  [0, -20] 
+});
 
-        this.myLocation[0].Lat = e.latitude;
-        this.myLocation[0].Lon = e.longitude;
-      });
-  }
+  this.map.locate({ setView: true, watch: true, maxZoom: 16 }).on("locationfound", (e: any) => {
+    console.log(this.newMarker);
+    if(this.newMarker != undefined){
+      this.newMarker.setLatLng(e.latlng);
+    } else {
+      this.newMarker = marker([e.latitude, e.longitude], {
+         icon:
+         me,
+         draggable:
+           false
+      }).addTo(this.map);
+    }
+    this.newMarker.bindPopup("You are located here!").openPopup();
+  });
+}
+
 
   ionViewDidEnter() {
     let Lat2 = Number(this.markerLocation[0].Lat);
