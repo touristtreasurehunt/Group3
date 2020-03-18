@@ -355,7 +355,7 @@ ion-button {
   position: absolute;
   background: #000;
   z-index: 999;
-  visibility: hidden;
+  // visibility: hidden;
 }
  
 .slide-full2 {
@@ -383,6 +383,7 @@ ion-button {
  
 #slide-2 {
   background: url(../../../assets/img/Teatro2.jpg);
+  background-position: -50px 0;
   background-size: cover;
 }
  
