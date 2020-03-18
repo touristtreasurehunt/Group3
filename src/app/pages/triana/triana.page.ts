@@ -4,6 +4,7 @@ import * as L from "leaflet";
 import { Map, tileLayer, marker, LatLng } from "leaflet";
 import "leaflet-routing-machine";
 import { ApiService } from 'src/app/services/api.service';
+import { Places } from 'src/app/models/places.interface';
 @Component({
   selector: "app-triana",
   templateUrl: "./triana.page.html",
@@ -13,6 +14,7 @@ export class TrianaPage implements OnInit {
   map: any;
   start: any;
   newMarker: any;
+  building: any;
 
   myLocation: { Lat: Number; Lon: Number }[] = [
     {
@@ -28,28 +30,20 @@ export class TrianaPage implements OnInit {
   ];
 
   slides: {
-    titulo: string;
     cssId: string;
     cssClass: string;
-    link: string;
   }[] = [
     {
-      titulo: "Triana",
       cssId: "slide-1",
-      cssClass: "slide-card",
-      link: "/triana"
+      cssClass: "slide-card"
     },
     {
-      titulo: "Playa de Patalavaca",
       cssId: "slide-2",
-      cssClass: "slide-card",
-      link: "/triana"
+      cssClass: "slide-card"
     },
     {
-      titulo: "Alberta",
       cssId: "slide-3",
-      cssClass: "slide-card",
-      link: "/triana"
+      cssClass: "slide-card"
     }
   ];
 
@@ -58,16 +52,17 @@ export class TrianaPage implements OnInit {
     speed: 500
   };
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService) {
+    this.building = this.api.building;
+  }
 
   ngOnInit() {
-    console.log(this.api.idBuilding);
+    console.log(this.api.building);
   }
 
   TransitionPagePanUp(ev) {
     const e = $("#ionBody2");
     e.addClass("bounceOutUp");
-    console.log("ev.center");
   }
 
   openPopUp() {
@@ -76,7 +71,6 @@ export class TrianaPage implements OnInit {
     const popup = $("#popup");
     overlay.addClass("active");
     popup.addClass("active");
-    // console.log('asdasdsadsadsadsadsadasdsa');
     ionBody.addClass("prueba");
   }
 

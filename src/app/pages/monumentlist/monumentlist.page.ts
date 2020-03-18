@@ -24,8 +24,9 @@ export class MonumentlistPage implements OnInit {
     this.arrayBuildings = this.connectionService.getListBuildings(this.api.idPlace);
   }
 
-  goBuilding(idBuilding) {
-    this.api.idBuilding = idBuilding;
+  goBuilding(idMonument) {
+    this.api.idBuilding = idMonument;
+    this.connectionService.fillObject(this.api.idPlace, idMonument);
     this.router.navigate(['/triana']);
   }
 
