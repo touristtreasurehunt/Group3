@@ -1,6 +1,6 @@
 export interface Places {
     name: string;
-    images: Array<String>;
+    idsCss: Array<String>;
     info: string;
     location: Map<string, string>;
 }

@@ -14,7 +14,8 @@ export class TrianaPage implements OnInit {
   map: any;
   start: any;
   newMarker: any;
-  building: any;
+  building: Places;
+  slides: Array<string>;
 
   myLocation: { Lat: Number; Lon: Number }[] = [
     {
@@ -29,24 +30,6 @@ export class TrianaPage implements OnInit {
     }
   ];
 
-  slides: {
-    cssId: string;
-    cssClass: string;
-  }[] = [
-    {
-      cssId: "slide-1",
-      cssClass: "slide-card"
-    },
-    {
-      cssId: "slide-2",
-      cssClass: "slide-card"
-    },
-    {
-      cssId: "slide-3",
-      cssClass: "slide-card"
-    }
-  ];
-
   sliderConfig = {
     autoplay: true,
     speed: 500
@@ -54,10 +37,10 @@ export class TrianaPage implements OnInit {
 
   constructor(private api: ApiService) {
     this.building = this.api.building;
+    this.slides = this.building.idsCss;
   }
 
   ngOnInit() {
-    console.log(this.api.building);
   }
 
   TransitionPagePanUp(ev) {
