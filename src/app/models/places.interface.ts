@@ -1,6 +1,11 @@
 export interface Places {
     name: string;
-    idsCss: Array<String>;
+    idsCss: Array<string>;
     info: string;
-    location: Map<string, string>;
+    location: {Lat: Number, Lon: Number};
+    questions : [{
+        question: string,
+        incorrect: Array<string>,
+        correct: string
+    }];
 }

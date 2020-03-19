@@ -27,7 +27,7 @@
     <ion-slides class="slide-full" [options]="sliderConfig">
       <ion-slide
         *ngFor="let slide of slides"
-        [id]="slide.cssId"
+        [id]="slide"
         class="slide-card"
       >
       </ion-slide>
@@ -73,7 +73,7 @@
     <ion-slides pager class="slide-full2" [options]="sliderConfig">
       <ion-slide
         *ngFor="let slide of slides"
-        [id]="slide.cssId"
+        [id]="slide"
         class="slide-card"
       >
       </ion-slide>

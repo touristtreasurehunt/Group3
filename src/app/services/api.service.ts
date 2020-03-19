@@ -10,6 +10,10 @@ export class ApiService {
   idPlace: string;
   idBuilding: string;
   building: Places;
+  listBuilding: [{
+    id: string,
+    building: Places
+  }]
 
   constructor() { }
 }

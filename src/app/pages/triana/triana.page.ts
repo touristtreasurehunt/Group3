@@ -15,7 +15,7 @@ export class TrianaPage implements OnInit {
   start: any;
   newMarker: any;
   building: Places;
-  slides: Array<string>;
+  slides: any;
 
   myLocation: { Lat: Number; Lon: Number }[] = [
     {
@@ -36,11 +36,29 @@ export class TrianaPage implements OnInit {
   };
 
   constructor(private api: ApiService) {
-    this.building = this.api.building;
-    this.slides = this.building.idsCss;
   }
 
   ngOnInit() {
+    this.building = this.getBuilding();
+    this.slides = this.building.idsCss
+    this.markerLocation = [];
+    this.markerLocation.push({
+      Lat: this.building.location.Lat,
+      Lon: this.building.location.Lon
+    });
+    console.log(this.building);
+    
+  }
+
+  getBuilding() {
+    let foobar: any;
+    this.api.listBuilding.forEach((element) => {
+      if (this.api.idBuilding == element.id) {
+        this.api.building = element.building;
+        foobar = element.building;
+      }
+    });
+    return foobar;
   }
 
   TransitionPagePanUp(ev) {
