@@ -5,6 +5,7 @@ import { Map, tileLayer, marker, LatLng } from "leaflet";
 import "leaflet-routing-machine";
 import { ApiService } from 'src/app/services/api.service';
 import { Places } from 'src/app/models/places.interface';
+import { Router } from '@angular/router';
 @Component({
   selector: "app-triana",
   templateUrl: "./triana.page.html",
@@ -35,7 +36,7 @@ export class TrianaPage implements OnInit {
     speed: 500
   };
 
-  constructor(private api: ApiService) {
+  constructor(private api: ApiService, private router: Router) {
   }
 
   ngOnInit() {
@@ -46,8 +47,6 @@ export class TrianaPage implements OnInit {
       Lat: this.building.location.Lat,
       Lon: this.building.location.Lon
     });
-    console.log(this.building);
-    
   }
 
   getBuilding() {
@@ -141,5 +140,12 @@ locatePosition() {
       waypoints: [L.latLng(Lat1, Lon1), L.latLng(Lat2, Lon2)],
       routeWhileDragging: true
     }).addTo(this.map);
+  }
+
+  goGame() {
+    this.api.lastQuestion = 0;
+    this.api.incorrects = 0;
+    this.api.corrects = 0;
+    this.router.navigate(['/game']);
   }
 }

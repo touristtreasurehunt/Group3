@@ -14,6 +14,9 @@ export class ApiService {
     id: string,
     building: Places
   }]
+  lastQuestion: number;
+  incorrects: number;
+  corrects: number;
 
   constructor() { }
 }

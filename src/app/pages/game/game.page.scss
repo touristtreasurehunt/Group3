@@ -237,6 +237,10 @@ ion-icon[name=home]{
   z-index: 999;
 }
 
+.buttonOption {
+  color: black;
+}
+
 #curtain.active .buttonOption{
   visibility: visible;
   transition-delay: 3.1s;
