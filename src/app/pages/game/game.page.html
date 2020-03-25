@@ -11,7 +11,7 @@
       {{ question.question }}
       </div>
       <ion-icon name="close"></ion-icon>
-      <p class="dato2">{{ datas.corrects }}</p>
+      <p class="dato2">{{ datas.incorrects }}</p>
     </div>
     <div class="redondo">
       <ion-icon name="home" routerLink="/canary-h"></ion-icon>
@@ -20,16 +20,16 @@
     </div>
     <div *ngIf="isLastQuestion; then thenBlock else elseBlock"></div>
     <ng-template #thenBlock>
-      <ion-button class="buttonOption animated" id="option1" (click)="goEndGame(answers[0].correct)">{{ answers[0].answer }}</ion-button>
-      <ion-button class="buttonOption animated" id="option2" (click)="goEndGame(answers[1].correct)">{{ answers[1].answer }}</ion-button>
-      <ion-button class="buttonOption animated" id="option3" (click)="goEndGame(answers[2].correct)">{{ answers[2].answer }}</ion-button>
-      <ion-button class="buttonOption animated" id="option4" (click)="goEndGame(answers[3].correct)">{{ answers[3].answer }}</ion-button>
+      <ion-button class="buttonOption animated" id="option1" (click)="goEndGame($event, answers[0].correct)">{{ answers[0].answer }}</ion-button>
+      <ion-button class="buttonOption animated" id="option2" (click)="goEndGame($event, answers[1].correct)">{{ answers[1].answer }}</ion-button>
+      <ion-button class="buttonOption animated" id="option3" (click)="goEndGame($event, answers[2].correct)">{{ answers[2].answer }}</ion-button>
+      <ion-button class="buttonOption animated" id="option4" (click)="goEndGame($event, answers[3].correct)">{{ answers[3].answer }}</ion-button>
     </ng-template>
     <ng-template #elseBlock>
-      <ion-button class="buttonOption animated" id="option1" (click)="nextQuestion(answers[0].correct)">{{ answers[0].answer }}</ion-button>
-      <ion-button class="buttonOption animated" id="option2" (click)="nextQuestion(answers[1].correct)">{{ answers[1].answer }}</ion-button>
-      <ion-button class="buttonOption animated" id="option3" (click)="nextQuestion(answers[2].correct)">{{ answers[2].answer }}</ion-button>
-      <ion-button class="buttonOption animated" id="option4" (click)="nextQuestion(answers[3].correct)">{{ answers[3].answer }}</ion-button>
+      <ion-button class="buttonOption animated" id="option1" (click)="nextQuestion($event, answers[0].correct)">{{ answers[0].answer }}</ion-button>
+      <ion-button class="buttonOption animated" id="option2" (click)="nextQuestion($event, answers[1].correct)">{{ answers[1].answer }}</ion-button>
+      <ion-button class="buttonOption animated" id="option3" (click)="nextQuestion($event, answers[2].correct)">{{ answers[2].answer }}</ion-button>
+      <ion-button class="buttonOption animated" id="option4" (click)="nextQuestion($event, answers[3].correct)">{{ answers[3].answer }}</ion-button>
     </ng-template>
 
     <svg id="svg2" class="animated" width="1920" height="80" viewBox="0 0 1920 80" fill="none" xmlns="http://www.w3.org/2000/svg">
