@@ -27,8 +27,8 @@
     <ion-slides class="slide-full" [options]="sliderConfig">
       <ion-slide
         *ngFor="let slide of slides"
-        [id]="slide.cssId"
-        [class]="slide.cssClass"
+        [id]="slide"
+        class="slide-card"
       >
       </ion-slide>
     </ion-slides>
@@ -66,15 +66,15 @@
       </p>
     </div>
     <div id="hr"></div>
-    <ion-button id="buttonGame" routerLink="/game">Play Now</ion-button>
+    <ion-button id="buttonGame" (click)="goGame()">Play Now</ion-button>
   </div>
 
   <div id="ionBody2" class="animated">
     <ion-slides pager class="slide-full2" [options]="sliderConfig">
       <ion-slide
         *ngFor="let slide of slides"
-        [id]="slide.cssId"
-        [class]="slide.cssClass"
+        [id]="slide"
+        class="slide-card"
       >
       </ion-slide>
     </ion-slides>

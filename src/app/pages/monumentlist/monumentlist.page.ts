@@ -22,6 +22,7 @@ export class MonumentlistPage implements OnInit {
 
   ngOnInit() {
     this.arrayBuildings = this.connectionService.getListBuildings(this.api.idPlace);
+    this.connectionService.fillObjects(this.api.idPlace);
   }
 
   goBuilding(idMonument) {
