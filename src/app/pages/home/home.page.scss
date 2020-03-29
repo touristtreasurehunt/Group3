@@ -50,24 +50,101 @@ ion-toolbar ion-title {
   font-size: 180%;
   color: #FFFFFF;
   margin-top: 20%;
-  text-shadow: 0% 3% 4% #28110B;
+  text-shadow: 0px 3px 4px #28110B;
   text-transform: uppercase;
 }
 
 #home-txt h1{
   font-family: 'hello';
-  font-size: 607%;
+  font-size: 130px;
   margin-top: -10%;
   color: #F9D54A;
   transform: rotate(-5deg);
-  text-shadow: 0% 3% 4% #28110B;
+  text-shadow: 0px 3px 4px #28110B;
   text-transform: uppercase;
+}
+
+#logo{
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fill .5s ease forwards 3.5s;
+}
+
+#logo path:nth-child(1){
+  stroke-dasharray: 794px;
+  stroke-dashoffset: 794px;
+  animation: line-anim 2s ease forwards ;
+}
+
+#logo path:nth-child(2){
+  stroke-dasharray: 1243px;
+  stroke-dashoffset: 1243px;
+  animation: line-anim 2s ease forwards .3s;
+}
+
+
+#logo path:nth-child(3){
+  stroke-dasharray: 732px;
+  stroke-dashoffset: 732px;
+  animation: line-anim 2s ease forwards .6s;
+}
+
+#logo path:nth-child(4){
+  stroke-dasharray: 674px;
+  stroke-dashoffset: 674px;
+  animation: line-anim 2s ease forwards .9s;
+}
+
+#logo path:nth-child(5){
+  stroke-dasharray: 804px;
+  stroke-dashoffset: 804px;
+  animation: line-anim 2s ease forwards 1.2s;
+}
+
+#logo path:nth-child(6){
+  stroke-dasharray: 649px;
+  stroke-dashoffset: 649px;
+  animation: line-anim 2s ease forwards 1.5s;
+}
+
+#logo path:nth-child(7){
+  stroke-dasharray: 808px;
+  stroke-dashoffset: 808px;
+  animation: line-anim 2s ease forwards 1.8s;
+}
+
+#logo path:nth-child(8){
+  stroke-dasharray: 834px;
+  stroke-dashoffset: 834px;
+  animation: line-anim 2s ease forwards 2.1s;
+}
+
+#logo path:nth-child(9){
+  stroke-dasharray: 674px;
+  stroke-dashoffset: 674px;
+  animation: line-anim 2s ease forwards 2.4s;
+}
+
+@keyframes line-anim{
+  to{
+      stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill{
+  to{
+      fill: #F1C723;
+  }
 }
 
 ion-item{
   width: 50%;
   height: 5%;
-  margin-left: 26%;
+  position: absolute;
+  top: 32.5%;
+  left: 25%;
   font-size: 20%;
   border: 1% solid #000;
   margin-top: 72.5%;
@@ -87,8 +164,9 @@ ion-item ion-select{
 ion-button{
   width: 60%;
   height: 6%;
-  margin-top: 5.5%;
-  margin-left: 2.5%;
+  position: absolute;
+  top: 82.5%;
+  left: 20%;
   font-family: 'Quicksand-regular';
   font-size: 120%;
   --background: #0768A9;

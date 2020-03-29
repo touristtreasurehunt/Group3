@@ -37,7 +37,7 @@ ion-content{
     font-family: 'neueM';
     color: #ffffff;
     text-transform: uppercase;
-    font-size: 150%;
+    font-size: 200%;
     font-weight: bold;
     position: absolute;
     top: 10.5%;
@@ -96,6 +96,14 @@ ion-button h5{
     --bullet-background-active: #F9D54A;
 }
 
+ion-icon[name=medical]{
+    height: 7%;
+    width: 7%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+  }
+
 ion-card{
     overflow: unset !important;
     height: 80%;
@@ -107,24 +115,16 @@ ion-card-header{
     position: relative;
 }
 
-.ios ion-card-title{
+ion-card-title{
     color: #fff;
-    font-size: 100%;
-    font-family: 'neueM';
+    font-size: 700%;
+    text-align: center;
+    width: 100%;
+    font-family: 'hello';
     text-transform: uppercase;
     position: absolute;
-    left: 5%;
-    top: 350%;
-}
-
-.md ion-card-title{
-    color: #fff;
-    font-size: 100%;
-    font-family: 'neueM';
-    text-transform: uppercase;
-    position: absolute;
-    left: 32.5%;
-    top: 100%;
+    left: 0%;
+    top: 90%;
 }
 
 .slide-full .slide ion-card{
@@ -137,11 +137,13 @@ ion-card-header{
 
 
 .slide-full .slide:nth-child(1) ion-card{
-    --background: url(../../../assets/img/slides/aerial-photography-of-cinque-terre-in-greece-2422259.jpg);
+    --background: url(../../../assets/img/trianabg.jpg);
+    background-position: -125px 0;
 }
 
 .slide-full .slide:nth-child(2) ion-card{
-    --background: url(../../../assets/img/slides/aerial-photography-of-seashore-1404918.jpg);
+    --background: url(../../../assets/img/veguetabg.jpg);
+    background-position: -125px 0;
 }
 
 .slide-full .slide:nth-child(3) ion-card{

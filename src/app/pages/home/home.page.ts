@@ -15,4 +15,23 @@ export class HomePage {
     alert(name);
   }
 
+  ionViewWillEnter() {
+    setTimeout(function() {
+      const curtain = $('#homeh3');
+      curtain.addClass('bounceInDown');
+    }, 50);
+    setTimeout(function() {
+      const curtain = $('#homeh1');
+      curtain.addClass('bounceInDown');
+    }, 200);
+    setTimeout(function() {
+      const curtain = $('#homeitem');
+      curtain.addClass('bounceInLeft');
+    }, 300);
+    setTimeout(function() {
+      const curtain = $('#homebutton');
+      curtain.addClass('bounceInRight');
+    }, 500);
+  }
+
 }

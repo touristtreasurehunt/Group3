@@ -46,8 +46,22 @@ export class GamePage implements OnInit {
   goEndGame(event, isCorrect) {
     if (isCorrect) {
       this.api.corrects = this.api.corrects + 1;
+      event.target.classList.add('activeCorrectButton');
+      setTimeout(() => {
+        event.target.classList.remove('fadeIn');
+        event.target.classList.remove('activeCorrectButton');
+        event.target.classList.add('bounceOutLeft');
+      }, 2000);
+      setTimeout(() => {
+        event.target.classList.remove('bounceOutLeft');
+        event.target.classList.add('bounceInRight');
+      }, 5000);
     } else {
       this.api.incorrects = this.api.incorrects + 1;
+      event.target.classList.add('activeIncorrectButton');
+      setTimeout(() => {
+        event.target.classList.remove('activeIncorrectButton');
+      }, 2000);
     }
     this.api.lastQuestion = this.api.lastQuestion + 1;
     setTimeout(() => {
@@ -56,19 +70,44 @@ export class GamePage implements OnInit {
   }
 
   nextQuestion(event, isCorrect) {
+    let preg = document.querySelector("#redondosd");
     if (isCorrect) {
       this.api.corrects = this.api.corrects + 1;
-      event.target.style.background = "green";
+      event.target.classList.add('activeCorrectButton');
+      setTimeout(() => {
+        event.target.classList.remove('fadeIn');
+        event.target.classList.add('bounceOutLeft');
+        event.target.classList.remove('activeCorrectButton');
+        preg.classList.remove('bounceInDown');
+        preg.classList.add('bounceOutUp');
+      }, 1000);
+      setTimeout(() => {
+        event.target.classList.remove('bounceOutLeft');
+        event.target.classList.add('bounceInRight');
+        preg.classList.remove('bounceOutUp');
+        preg.classList.add('bounceIn');
+      }, 2000);
     } else {
       this.api.incorrects = this.api.incorrects + 1;
-      event.target.style.background = "red";
+      event.target.classList.add('activeIncorrectButton');
+      setTimeout(() => {
+        event.target.classList.remove('fadeIn');
+        event.target.classList.add('bounceOutLeft');
+        event.target.classList.remove('activeIncorrectButton');
+        preg.classList.remove('bounceInDown');
+        preg.classList.add('bounceOutUp');
+      }, 1000);
+      setTimeout(() => {
+        event.target.classList.remove('bounceOutLeft');
+        event.target.classList.add('bounceInRight');
+        preg.classList.remove('bounceOutUp');
+        preg.classList.add('bounceIn');
+      }, 2000);
     }
-    console.log(event);
-    
     this.api.lastQuestion = this.api.lastQuestion + 1;
     setTimeout(() => {
       this.ngOnInit();
-    }, 2000);
+    }, 2500);
   }
 
   getAnswers(correctAnswer, incorrectsAnswers) {
