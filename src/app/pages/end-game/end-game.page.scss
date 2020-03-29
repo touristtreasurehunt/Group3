@@ -119,31 +119,38 @@ ion-content{
 }
 
 #card h1{
-    font-family: 'Quicksand-semiBold';
-    color: black;
+  font-size: 200%;
+    font-family: 'WhoopAss';
+    color: #0768A9;
+    text-transform: uppercase;
+    text-shadow: 0 3px 4px #c1c1c1;
 }
 
 #card p{
     font-family: 'Quicksand-medium';
     font-size: 15px;
-    margin-top: 5%;
+    margin-top: 2%;
     color: black;
 }
 
 #result{
     width: 100%;
     height: 20%;
-    background: red;
     margin-top: 10%;
+    color: #F1C723;
+    text-shadow: 0 3px 4px #c1c1c1;
+    font-size: 450%;
+    font-family: 'Quicksand-semiBold';
 }
 
 ion-button{
     height: 12%;
     width: 50%;
-    margin-top: 10%;
+    margin-top: 24%;
     opacity: .82;
     --background: #F1C723;
     --background-hover: #F1C723;
+    --background-activated: #f1c723;
     z-index: 10;
     animation-delay: 1.2s;
     --border-radius: 30px;
@@ -204,7 +211,7 @@ ion-button h5{
   width: 120px;
   position: relative;
   top: 125px;
-  left: 22.5%;
+  left: 32.5%;
   border-radius: 120px;
 }
 
