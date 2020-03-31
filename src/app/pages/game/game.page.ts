@@ -107,7 +107,7 @@ export class GamePage implements OnInit {
     this.api.lastQuestion = this.api.lastQuestion + 1;
     setTimeout(() => {
       this.ngOnInit();
-    }, 2500);
+    }, 1900);
   }
 
   getAnswers(correctAnswer, incorrectsAnswers) {
